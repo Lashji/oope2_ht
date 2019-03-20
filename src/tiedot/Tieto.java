@@ -66,6 +66,11 @@ public abstract class Tieto implements Comparable<Tieto>, Tietoinen {
         return nimi.toString().equals(tieto.toString());
     }
 
+    public boolean equals(String hakusana){
+
+        return true;
+    }
+
     @Override
     public int hashCode() {
         return Objects.hash(nimi);

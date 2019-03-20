@@ -1,8 +1,12 @@
 package logic;
 
+import tiedot.Hakemisto;
+
 public class Tulkki {
     private static final String ERROR_MESSAGE = "ERROR!";
 
+    private Hakemisto juuri;
+    private Hakemisto sijainti;
 
 
 
