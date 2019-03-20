@@ -3,7 +3,7 @@ package tiedot;
 public class Tiedosto extends Tieto {
     private int koko;
 
-    public Tiedosto(StringBuilder nimi, int uusiKoko) {
+    public Tiedosto(StringBuilder nimi, int uusiKoko) throws IllegalArgumentException {
         super(nimi);
         koko(uusiKoko);
 
@@ -13,9 +13,11 @@ public class Tiedosto extends Tieto {
         koko(0);
     }
 
-    public void koko(int uusiKoko) {
+    public void koko(int uusiKoko) throws IllegalArgumentException{
         if (koko >= 0) {
             koko = uusiKoko;
+        } else {
+            throw new IllegalArgumentException();
         }
     }
 

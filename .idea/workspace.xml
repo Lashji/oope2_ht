@@ -2,11 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="54842989-b7cc-473c-9344-62a68f270056" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/harjoitustyo/omalista/OmaLista.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/logic/Tulkki.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Ht.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ht.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/apulaiset/In.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/apulaiset/Ooperoiva.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/apulaiset/Sailova.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/apulaiset/Syvakopioituva.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/apulaiset/Tietoinen.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tiedot/Hakemisto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tiedot/Hakemisto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tiedot/Tiedosto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tiedot/Tiedosto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tiedot/Tieto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tiedot/Tieto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ui/Kayttoliittyma.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Kayttoliittyma.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/In.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/In.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/OmaLista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/OmaLista.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/OmaLista.java" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,22 +36,22 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="205" />
+          <entry key="java" value="2415" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="205" />
+          <entry key="JAVA" value="2415" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="3" />
+          <entry key="java" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="3" />
+          <entry key="JAVA" value="12" />
         </counts>
       </usages-collector>
     </session>
@@ -51,8 +61,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Ht.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="9" column="10" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
+            <state relative-caret-position="150">
+              <caret line="10" column="19" lean-forward="true" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -61,32 +71,44 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ui/Kayttoliittyma.java">
+        <entry file="file://$PROJECT_DIR$/src/logic/Tulkki.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="60">
-              <caret line="4" selection-start-line="4" selection-end-line="4" />
+              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+              <folding>
+                <element signature="e#64#65#0" expanded="true" />
+                <element signature="e#81#82#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/utils/OmaLista.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/harjoitustyo/omalista/OmaLista.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="14" selection-start-column="14" selection-end-column="14" />
+            <state relative-caret-position="90">
+              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
               <folding>
-                <element signature="e#117#118#0" expanded="true" />
-                <element signature="e#140#141#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#258#259#0" expanded="true" />
+                <element signature="e#286#287#0" expanded="true" />
+                <element signature="e#340#341#0" expanded="true" />
+                <element signature="e#364#365#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/utils/In.java">
+        <entry file="file://$PROJECT_DIR$/src/ui/Kayttoliittyma.java">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret column="2" selection-start-column="2" selection-end-column="2" />
+              <caret column="11" lean-forward="true" selection-start-column="11" selection-end-column="11" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#519#520#0" expanded="true" />
+                <element signature="e#545#546#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -94,8 +116,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/tiedot/Tiedosto.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="23" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
+            <state relative-caret-position="285">
+              <caret line="21" column="5" lean-forward="true" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
               <folding>
                 <element signature="e#364#365#0" expanded="true" />
                 <element signature="e#391#392#0" expanded="true" />
@@ -106,14 +128,24 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/tiedot/Hakemisto.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+            <state relative-caret-position="45">
+              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
               <folding>
                 <element signature="e#479#480#0" expanded="true" />
                 <element signature="e#541#542#0" expanded="true" />
+                <element signature="e#707#708#0" expanded="true" />
+                <element signature="e#741#742#0" expanded="true" />
+                <element signature="e#1272#1273#0" expanded="true" />
+                <element signature="e#1299#1300#0" expanded="true" />
+                <element signature="e#1358#1359#0" expanded="true" />
+                <element signature="e#1386#1387#0" expanded="true" />
+                <element signature="e#1448#1449#0" expanded="true" />
+                <element signature="e#1476#1477#0" expanded="true" />
+                <element signature="e#1536#1537#0" expanded="true" />
+                <element signature="e#1564#1565#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -122,12 +154,30 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/tiedot/Tieto.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="15" selection-start-line="12" selection-end-line="15" />
+            <state relative-caret-position="90">
+              <caret line="8" column="67" lean-forward="true" selection-start-line="8" selection-start-column="67" selection-end-line="8" selection-end-column="67" />
               <folding>
-                <element signature="e#148#149#0" expanded="true" />
-                <element signature="e#178#179#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#233#234#0" expanded="true" />
+                <element signature="e#276#277#0" expanded="true" />
+                <element signature="e#465#466#0" expanded="true" />
+                <element signature="e#503#504#0" expanded="true" />
+                <element signature="e#627#628#0" expanded="true" />
+                <element signature="e#665#666#0" expanded="true" />
+                <element signature="e#1382#1383#0" expanded="true" />
+                <element signature="e#1423#1424#0" expanded="true" />
+                <element signature="e#1485#1486#0" expanded="true" />
+                <element signature="e#1520#1521#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/harjoitustyo/apulaiset/Tietoinen.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -150,13 +200,17 @@
         <option value="$PROJECT_DIR$/src/HT.java" />
         <option value="$PROJECT_DIR$/src/ui/TextUi.java" />
         <option value="$PROJECT_DIR$/src/Tieto/Hakemisto.java" />
-        <option value="$PROJECT_DIR$/src/tiedot/Tieto.java" />
-        <option value="$PROJECT_DIR$/src/tiedot/Tiedosto.java" />
         <option value="$PROJECT_DIR$/src/utils/In.java" />
+        <option value="$PROJECT_DIR$/src/utils/OmaLista.java" />
+        <option value="$PROJECT_DIR$/src/harjoitustyo/apulaiset/Tietoinen.java" />
         <option value="$PROJECT_DIR$/src/Ht.java" />
         <option value="$PROJECT_DIR$/src/ui/Kayttoliittyma.java" />
-        <option value="$PROJECT_DIR$/src/utils/OmaLista.java" />
+        <option value="$PROJECT_DIR$/src/logic/Tulkki.java" />
+        <option value="$PROJECT_DIR$/src/tiedot/Tiedosto.java" />
+        <option value="$PROJECT_DIR$/src/tiedot/Tieto.java" />
         <option value="$PROJECT_DIR$/src/tiedot/Hakemisto.java" />
+        <option value="$PROJECT_DIR$/src/tiedot/OmaLista.java" />
+        <option value="$PROJECT_DIR$/src/harjoitustyo/omalista/OmaLista.java" />
       </list>
     </option>
   </component>
@@ -196,6 +250,12 @@
               <item name="oope2_ht" type="b2602c69:ProjectViewProjectNode" />
               <item name="oope2_ht" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="harjoitustyo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="oope2_ht" type="b2602c69:ProjectViewProjectNode" />
+              <item name="oope2_ht" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="tiedot" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -203,12 +263,6 @@
               <item name="oope2_ht" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="ui" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="oope2_ht" type="b2602c69:ProjectViewProjectNode" />
-              <item name="oope2_ht" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -219,7 +273,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552657849410" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553072470678" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -239,6 +293,20 @@
       </list>
     </option>
   </component>
+  <component name="RunManager">
+    <configuration name="Oope2HT" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Oope2HT" />
+      <module name="oope2_ht" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Oope2HT" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -251,18 +319,17 @@
       <updated>1552131453422</updated>
       <workItem from="1552131456396" duration="6533000" />
       <workItem from="1552393049688" duration="3825000" />
-      <workItem from="1552904572474" duration="2007000" />
+      <workItem from="1552904572474" duration="6680000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12365000" />
+    <option name="totallyTimeSpent" value="17038000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="48" y="0" width="1874" height="1082" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16411379" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16411379" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -270,9 +337,10 @@
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info id="Learn" order="7" />
+      <window_info anchor="bottom" id="Messages" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3294979" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -280,7 +348,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.2374477" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.31380752" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -306,42 +374,14 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/tiedot/Tieto.java</url>
-          <line>13</line>
+          <line>17</line>
           <properties />
-          <option name="timeStamp" value="1" />
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Ht.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="9" column="10" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/Kayttoliittyma.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/OmaLista.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="14" selection-start-column="14" selection-end-column="14" />
-          <folding>
-            <element signature="e#117#118#0" expanded="true" />
-            <element signature="e#140#141#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/utils/In.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -349,10 +389,78 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/apulaiset/In.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="2" lean-forward="true" selection-start-line="15" selection-start-column="2" selection-end-line="15" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/harjoitustyo/apulaiset/Syvakopioituva.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/harjoitustyo/apulaiset/Sailova.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/harjoitustyo/apulaiset/Ooperoiva.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/harjoitustyo/apulaiset/In.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="2" lean-forward="true" selection-start-line="15" selection-start-column="2" selection-end-line="15" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ht.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="19" lean-forward="true" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/logic/Tulkki.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+          <folding>
+            <element signature="e#64#65#0" expanded="true" />
+            <element signature="e#81#82#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/Kayttoliittyma.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="11" lean-forward="true" selection-start-column="11" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#519#520#0" expanded="true" />
+            <element signature="e#545#546#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/tiedot/Tiedosto.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="23" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
+        <state relative-caret-position="285">
+          <caret line="21" column="5" lean-forward="true" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
           <folding>
             <element signature="e#364#365#0" expanded="true" />
             <element signature="e#391#392#0" expanded="true" />
@@ -362,24 +470,64 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/tiedot/Tieto.java">
+    <entry file="file://$PROJECT_DIR$/src/tiedot/Hakemisto.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="15" selection-start-line="12" selection-end-line="15" />
+        <state relative-caret-position="45">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
           <folding>
-            <element signature="e#148#149#0" expanded="true" />
-            <element signature="e#178#179#0" expanded="true" />
+            <element signature="e#479#480#0" expanded="true" />
+            <element signature="e#541#542#0" expanded="true" />
+            <element signature="e#707#708#0" expanded="true" />
+            <element signature="e#741#742#0" expanded="true" />
+            <element signature="e#1272#1273#0" expanded="true" />
+            <element signature="e#1299#1300#0" expanded="true" />
+            <element signature="e#1358#1359#0" expanded="true" />
+            <element signature="e#1386#1387#0" expanded="true" />
+            <element signature="e#1448#1449#0" expanded="true" />
+            <element signature="e#1476#1477#0" expanded="true" />
+            <element signature="e#1536#1537#0" expanded="true" />
+            <element signature="e#1564#1565#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/tiedot/Hakemisto.java">
+    <entry file="file://$PROJECT_DIR$/src/harjoitustyo/apulaiset/Tietoinen.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+        <state relative-caret-position="180">
+          <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tiedot/Tieto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="8" column="67" lean-forward="true" selection-start-line="8" selection-start-column="67" selection-end-line="8" selection-end-column="67" />
           <folding>
-            <element signature="e#479#480#0" expanded="true" />
-            <element signature="e#541#542#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#233#234#0" expanded="true" />
+            <element signature="e#276#277#0" expanded="true" />
+            <element signature="e#465#466#0" expanded="true" />
+            <element signature="e#503#504#0" expanded="true" />
+            <element signature="e#627#628#0" expanded="true" />
+            <element signature="e#665#666#0" expanded="true" />
+            <element signature="e#1382#1383#0" expanded="true" />
+            <element signature="e#1423#1424#0" expanded="true" />
+            <element signature="e#1485#1486#0" expanded="true" />
+            <element signature="e#1520#1521#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/harjoitustyo/omalista/OmaLista.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#258#259#0" expanded="true" />
+            <element signature="e#286#287#0" expanded="true" />
+            <element signature="e#340#341#0" expanded="true" />
+            <element signature="e#364#365#0" expanded="true" />
           </folding>
         </state>
       </provider>
