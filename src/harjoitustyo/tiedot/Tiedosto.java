@@ -1,4 +1,4 @@
-package tiedot;
+package harjoitustyo.tiedot;
 
 public class Tiedosto extends Tieto {
     private int koko;

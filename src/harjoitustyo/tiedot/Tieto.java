@@ -1,10 +1,8 @@
-package tiedot;
+package harjoitustyo.tiedot;
 
 import harjoitustyo.apulaiset.Tietoinen;
 
 import java.util.Objects;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public abstract class Tieto implements Comparable<Tieto>, Tietoinen {
 
@@ -47,9 +45,6 @@ public abstract class Tieto implements Comparable<Tieto>, Tietoinen {
         }
 
         String pattern = "^[A-Za-z0-9_.]+$\n";
-
-//        Pattern p = Pattern.compile(pattern);
-//        Matcher m = p.matcher(nimi);
 
         if (!nimi.toString().matches(pattern)){
             return false;

@@ -1,4 +1,4 @@
-package tiedot;
+package harjoitustyo.tiedot;
 
 import harjoitustyo.apulaiset.Sailova;
 import harjoitustyo.omalista.OmaLista;
@@ -11,8 +11,8 @@ public class Hakemisto extends Tieto implements Sailova<Tieto> {
 
     public Hakemisto(StringBuilder uusiNimi, Hakemisto uusiYlihakemisto) throws  IllegalArgumentException{
         super(uusiNimi);
-        ylihakemisto = uusiYlihakemisto;
         sisalto = new OmaLista<>();
+        ylihakemisto = uusiYlihakemisto;
     }
 
     public Hakemisto(){
@@ -40,7 +40,6 @@ public class Hakemisto extends Tieto implements Sailova<Tieto> {
 
     public void sisalto(OmaLista<Tieto> uusiSisalto) throws IllegalArgumentException{
         if (uusiSisalto != null) {
-
             sisalto = uusiSisalto;
         } else {
             throw new IllegalArgumentException();
@@ -49,11 +48,24 @@ public class Hakemisto extends Tieto implements Sailova<Tieto> {
 
     @Override
     public LinkedList<Tieto> hae(String hakusana) {
-        return null;
+        LinkedList<Tieto> lista = new LinkedList<>();
+
+        for (Tieto t : lista ){
+            if (t.nimi().equals(hakusana)){
+                lista.add(t);
+            }
+        }
+
+
+        return lista;
     }
 
     @Override
     public boolean lisaa(Tieto lisattava) {
+
+        sisalto.lisaa(lisattava);
+
+
         return false;
     }
 

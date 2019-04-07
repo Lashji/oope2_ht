@@ -1,7 +1,7 @@
-package ui;
+package harjoitustyo.ui;
 
 import harjoitustyo.apulaiset.In;
-import logic.Tulkki;
+import harjoitustyo.tulkki.Tulkki;
 
 public class Kayttoliittyma {
     private In in;

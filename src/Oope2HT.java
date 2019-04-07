@@ -1,5 +1,5 @@
-import logic.Tulkki;
-import ui.Kayttoliittyma;
+import harjoitustyo.tulkki.Tulkki;
+import harjoitustyo.ui.Kayttoliittyma;
 import harjoitustyo.apulaiset.In;
 
 public class Oope2HT {

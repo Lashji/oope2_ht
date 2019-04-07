@@ -3,6 +3,7 @@ package harjoitustyo.omalista;
 import harjoitustyo.apulaiset.Ooperoiva;
 
 import java.util.LinkedList;
+import java.util.ListIterator;
 
 public class OmaLista<E> extends LinkedList<E> implements Ooperoiva<E> {
 
@@ -13,11 +14,16 @@ public class OmaLista<E> extends LinkedList<E> implements Ooperoiva<E> {
 
     @Override
     public boolean lisaa(E uusi) {
-        return false;
+        return add(uusi);
     }
 
     @Override
     public int poista(E poistettava) {
-        return 0;
+
+        ListIterator iterator = new ListIterator();
+
+
+
+
     }
 }
