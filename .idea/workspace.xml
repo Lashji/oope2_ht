@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="54842989-b7cc-473c-9344-62a68f270056" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/src/Oope2HT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Oope2HT.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/harjoitustyo/omalista/OmaLista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/harjoitustyo/omalista/OmaLista.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/logic/Tulkki.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/harjoitustyo/tulkki/Tulkki.java" afterDir="false" />
@@ -10,6 +11,19 @@
       <change beforePath="$PROJECT_DIR$/src/tiedot/Tiedosto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/harjoitustyo/tiedot/Tiedosto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tiedot/Tieto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/harjoitustyo/tiedot/Tieto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ui/Kayttoliittyma.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/harjoitustyo/ui/Kayttoliittyma.java" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/out/production/oope2_ht/Ht.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/oope2_ht/logic/Tulkki.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/oope2_ht/logic/Tulkki.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/oope2_ht/tiedot/Hakemisto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/oope2_ht/tiedot/Tiedosto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/oope2_ht/tiedot/Tieto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/oope2_ht/utils/OmaLista.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/harjoitustyo/omalista/OmaLista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/harjoitustyo/omalista/OmaLista.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logic/Tulkki.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/Tulkki.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tiedot/Hakemisto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/harjoitustyo/tiedot/Hakemisto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tiedot/Tiedosto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/harjoitustyo/tiedot/Tiedosto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tiedot/Tieto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/harjoitustyo/tiedot/Tieto.java" afterDir="false" />
+>>>>>>> 4e5e515f6afbc372774f3d40b848e9066b7a562b
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,11 +32,54 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+<<<<<<< HEAD
+=======
+  <component name="FUSProjectUsageTrigger">
+    <session id="-1572280846">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="4" />
+          <entry key="project.open.time.10" value="4" />
+          <entry key="project.open.time.3" value="1" />
+          <entry key="project.open.time.9" value="1" />
+          <entry key="project.opened" value="6" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="dummy" value="13" />
+          <entry key="java" value="3687" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="3687" />
+          <entry key="PLAIN_TEXT" value="13" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="class" value="2" />
+          <entry key="iml" value="1" />
+          <entry key="java" value="14" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="CLASS" value="2" />
+          <entry key="IDEA_MODULE" value="1" />
+          <entry key="JAVA" value="14" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+>>>>>>> 4e5e515f6afbc372774f3d40b848e9066b7a562b
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/harjoitustyo/tiedot/Tiedosto.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="161">
               <caret line="7" column="23" lean-forward="true" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
               <folding>
@@ -33,10 +90,27 @@
                 <element signature="e#437#438#0" expanded="true" />
                 <element signature="e#489#490#0" expanded="true" />
               </folding>
+=======
+            <state relative-caret-position="120">
+              <caret line="10" column="18" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/logic/Tulkki.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="780">
+              <caret line="54" selection-start-line="54" selection-end-line="54" />
+>>>>>>> 4e5e515f6afbc372774f3d40b848e9066b7a562b
+            </state>
+          </provider>
+        </entry>
+      </file>
+<<<<<<< HEAD
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/harjoitustyo/tiedot/Hakemisto.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -52,6 +126,15 @@
                 <element signature="e#1492#1493#0" expanded="true" />
                 <element signature="e#1552#1553#0" expanded="true" />
                 <element signature="e#1580#1581#0" expanded="true" />
+=======
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/harjoitustyo/omalista/OmaLista.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="15" selection-start-line="15" selection-end-line="15" />
+              <folding>
+                <element signature="imports" expanded="true" />
+>>>>>>> 4e5e515f6afbc372774f3d40b848e9066b7a562b
               </folding>
             </state>
           </provider>
@@ -60,27 +143,43 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/harjoitustyo/omalista/OmaLista.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="440">
               <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#274#275#0" expanded="true" />
                 <element signature="e#308#309#0" expanded="true" />
+=======
+            <state>
+              <caret column="11" selection-start-column="11" selection-end-column="11" />
+              <folding>
+                <element signature="imports" expanded="true" />
+>>>>>>> 4e5e515f6afbc372774f3d40b848e9066b7a562b
               </folding>
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/harjoitustyo/apulaiset/Ooperoiva.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="341">
               <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
+=======
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/harjoitustyo/tiedot/Tiedosto.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="20" column="9" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
+>>>>>>> 4e5e515f6afbc372774f3d40b848e9066b7a562b
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/src/harjoitustyo/tiedot/Tieto.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="391">
@@ -88,10 +187,40 @@
               <folding>
                 <element signature="method#equals#0;class#Tieto#0" />
               </folding>
+=======
+        <entry file="file://$PROJECT_DIR$/src/harjoitustyo/tiedot/Hakemisto.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" selection-start-line="4" selection-end-line="4" />
+>>>>>>> 4e5e515f6afbc372774f3d40b848e9066b7a562b
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
+=======
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/harjoitustyo/tiedot/Tieto.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="420">
+              <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/harjoitustyo/apulaiset/Ooperoiva.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="31" selection-start-column="31" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+>>>>>>> 4e5e515f6afbc372774f3d40b848e9066b7a562b
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -121,8 +250,12 @@
         <option value="$PROJECT_DIR$/src/Oope2HT.java" />
         <option value="$PROJECT_DIR$/src/logic/Tulkki.java" />
         <option value="$PROJECT_DIR$/src/tiedot/Tieto.java" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/src/harjoitustyo/tiedot/Tieto.java" />
         <option value="$PROJECT_DIR$/src/harjoitustyo/tiedot/Hakemisto.java" />
+=======
+        <option value="$PROJECT_DIR$/src/harjoitustyo/tiedot/Tiedosto.java" />
+>>>>>>> 4e5e515f6afbc372774f3d40b848e9066b7a562b
         <option value="$PROJECT_DIR$/src/harjoitustyo/omalista/OmaLista.java" />
       </list>
     </option>
@@ -139,7 +272,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+<<<<<<< HEAD
       <pane id="Scope" />
+=======
+>>>>>>> 4e5e515f6afbc372774f3d40b848e9066b7a562b
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -152,6 +288,7 @@
               <item name="oope2_ht" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
+<<<<<<< HEAD
             <path>
               <item name="oope2_ht" type="b2602c69:ProjectViewProjectNode" />
               <item name="oope2_ht" type="462c0819:PsiDirectoryNode" />
@@ -172,17 +309,27 @@
               <item name="harjoitustyo" type="462c0819:PsiDirectoryNode" />
               <item name="tiedot" type="462c0819:PsiDirectoryNode" />
             </path>
+=======
+>>>>>>> 4e5e515f6afbc372774f3d40b848e9066b7a562b
           </expand>
           <select />
         </subPane>
       </pane>
+<<<<<<< HEAD
+=======
+      <pane id="Scope" />
+>>>>>>> 4e5e515f6afbc372774f3d40b848e9066b7a562b
       <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+<<<<<<< HEAD
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554627177111" />
+=======
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553155137289" />
+>>>>>>> 4e5e515f6afbc372774f3d40b848e9066b7a562b
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -228,11 +375,16 @@
       <updated>1552131453422</updated>
       <workItem from="1552131456396" duration="6533000" />
       <workItem from="1552393049688" duration="3825000" />
-      <workItem from="1552904572474" duration="8101000" />
+      <workItem from="1552904572474" duration="9326000" />
+      <workItem from="1553168525561" duration="5505000" />
+      <workItem from="1553599306438" duration="1214000" />
+      <workItem from="1554272310421" duration="4262000" />
+      <workItem from="1554368759520" duration="599000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="23007000" />
   </component>
   <component name="ToolWindowManager">
@@ -240,6 +392,14 @@
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25266525" />
+=======
+    <option name="totallyTimeSpent" value="31264000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="48" y="0" width="1874" height="1082" extended-state="6" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1690372" />
+>>>>>>> 4e5e515f6afbc372774f3d40b848e9066b7a562b
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -257,8 +417,13 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+<<<<<<< HEAD
       <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49946696" visible="true" weight="0.23634337" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50053304" side_tool="true" weight="0.23634337" />
+=======
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.31347963" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+>>>>>>> 4e5e515f6afbc372774f3d40b848e9066b7a562b
       <window_info anchor="bottom" id="Messages" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -272,6 +437,40 @@
       <window_info anchor="right" id="Database" order="9" />
       <window_info anchor="right" id="Maven Projects" order="10" />
     </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16575493" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info id="Learn" order="7" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3294979" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.31347963" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="12" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Codota" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Maven" order="6" />
+      <window_info anchor="right" id="Capture Analysis" order="7" />
+      <window_info anchor="right" id="Palette&#9;" order="8" />
+      <window_info anchor="right" id="Database" order="9" />
+      <window_info anchor="right" id="Maven Projects" order="10" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -312,22 +511,37 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/harjoitustyo/ui/Kayttoliittyma.java">
+=======
+    <entry file="file://$PROJECT_DIR$/oope2_ht.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="jrt:///usr/lib/jvm/java-10-openjdk!/java.base/java/util/List.class">
+>>>>>>> 4e5e515f6afbc372774f3d40b848e9066b7a562b
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="11" lean-forward="true" selection-start-column="11" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#519#520#0" expanded="true" />
-            <element signature="e#545#546#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="-330">
+          <caret line="50" column="5" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+=======
+    <entry file="file://$PROJECT_DIR$/src/harjoitustyo/apulaiset/Tietoinen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jrt:///usr/lib/jvm/java-10-openjdk!/java.base/java/util/Comparator.class">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+>>>>>>> 4e5e515f6afbc372774f3d40b848e9066b7a562b
     <entry file="file://$PROJECT_DIR$/src/Oope2HT.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="19" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+        <state relative-caret-position="120">
+          <caret line="10" column="18" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -336,15 +550,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/harjoitustyo/tulkki/Tulkki.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        <state relative-caret-position="780">
+          <caret line="54" selection-start-line="54" selection-end-line="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/Kayttoliittyma.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="11" selection-start-column="11" selection-end-column="11" />
           <folding>
-            <element signature="e#64#65#0" expanded="true" />
-            <element signature="e#81#82#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/harjoitustyo/apulaiset/Tietoinen.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -373,10 +594,33 @@
             <element signature="e#391#392#0" expanded="true" />
             <element signature="e#437#438#0" expanded="true" />
             <element signature="e#489#490#0" expanded="true" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/harjoitustyo/tiedot/Tiedosto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="20" column="9" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/harjoitustyo/tiedot/Hakemisto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/harjoitustyo/tiedot/Tieto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+>>>>>>> 4e5e515f6afbc372774f3d40b848e9066b7a562b
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/harjoitustyo/tiedot/Hakemisto.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
@@ -392,17 +636,30 @@
             <element signature="e#1552#1553#0" expanded="true" />
             <element signature="e#1580#1581#0" expanded="true" />
           </folding>
+=======
+    <entry file="file://$PROJECT_DIR$/src/harjoitustyo/apulaiset/Ooperoiva.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="31" selection-start-column="31" selection-end-column="31" />
+>>>>>>> 4e5e515f6afbc372774f3d40b848e9066b7a562b
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/harjoitustyo/omalista/OmaLista.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="440">
           <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#274#275#0" expanded="true" />
             <element signature="e#308#309#0" expanded="true" />
+=======
+        <state relative-caret-position="195">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+          <folding>
+            <element signature="imports" expanded="true" />
+>>>>>>> 4e5e515f6afbc372774f3d40b848e9066b7a562b
           </folding>
         </state>
       </provider>
