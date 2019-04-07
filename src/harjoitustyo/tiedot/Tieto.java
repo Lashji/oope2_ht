@@ -1,10 +1,8 @@
-package tiedot;
+package harjoitustyo.tiedot;
 
 import harjoitustyo.apulaiset.Tietoinen;
 
 import java.util.Objects;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public abstract class Tieto implements Comparable<Tieto>, Tietoinen {
 

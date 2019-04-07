@@ -1,4 +1,4 @@
-package tiedot;
+package harjoitustyo.tiedot;
 
 import harjoitustyo.apulaiset.Sailova;
 import harjoitustyo.omalista.OmaLista;

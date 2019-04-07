@@ -1,6 +1,6 @@
 package logic;
 
-import tiedot.Hakemisto;
+import harjoitustyo.tiedot.Hakemisto;
 
 public class Tulkki {
     private static final String ERROR_MESSAGE = "ERROR!";
