@@ -21,7 +21,7 @@ public class Kayttoliittyma {
 
             String valinta = In.readString();
 
-            jatka = tulkki.doCommand(sanitize(valinta));
+            jatka = tulkki.komento(sanitize(valinta));
 
         }
 

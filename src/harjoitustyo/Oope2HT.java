@@ -1,3 +1,5 @@
+package harjoitustyo;
+
 import harjoitustyo.tulkki.Tulkki;
 import harjoitustyo.ui.Kayttoliittyma;
 import harjoitustyo.apulaiset.In;

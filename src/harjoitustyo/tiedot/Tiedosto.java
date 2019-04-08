@@ -1,6 +1,8 @@
 package harjoitustyo.tiedot;
 
-public class Tiedosto extends Tieto {
+import harjoitustyo.apulaiset.Syvakopioituva;
+
+public class Tiedosto extends Tieto implements Syvakopioituva<Tieto> {
     private int koko;
 
     public Tiedosto(StringBuilder nimi, int uusiKoko) throws IllegalArgumentException {
@@ -28,5 +30,10 @@ public class Tiedosto extends Tieto {
     @Override
     public String toString() {
         return super.toString() + " " + koko;
+    }
+
+    @Override
+    public Tieto kopioi() {
+        return null;
     }
 }

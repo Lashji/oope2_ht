@@ -12,7 +12,7 @@ public class Hakemisto extends Tieto implements Sailova<Tieto> {
     public Hakemisto(StringBuilder uusiNimi, Hakemisto uusiYlihakemisto) throws  IllegalArgumentException{
         super(uusiNimi);
         sisalto = new OmaLista<>();
-        ylihakemisto = uusiYlihakemisto;
+        ylihakemisto(uusiYlihakemisto);
     }
 
     public Hakemisto(){
@@ -20,18 +20,10 @@ public class Hakemisto extends Tieto implements Sailova<Tieto> {
         sisalto = new OmaLista<>();
         ylihakemisto = null;
     }
-    public String toString() {
-        return super.toString() + "/" + sisalto.size();
-    }
 
-    public void ylihakemisto(Hakemisto h) throws IllegalArgumentException{
-        if (h != null)
-        {
+
+    public void ylihakemisto(Hakemisto h){
             ylihakemisto = h;
-        } else {
-            throw new IllegalArgumentException();
-        }
-
     }
 
     public Hakemisto ylihakemisto(){
@@ -49,33 +41,28 @@ public class Hakemisto extends Tieto implements Sailova<Tieto> {
     @Override
     public LinkedList<Tieto> hae(String hakusana) {
         LinkedList<Tieto> lista = new LinkedList<>();
-
-        for (Tieto t : lista ){
+        for (Tieto t : sisalto ){
             if (t.nimi().equals(hakusana)){
                 lista.add(t);
             }
         }
-
-
         return lista;
     }
 
     @Override
     public boolean lisaa(Tieto lisattava) {
-
-        sisalto.lisaa(lisattava);
-
-
-        return false;
+       return sisalto.lisaa(lisattava);
     }
 
     @Override
     public boolean poista(Tieto poistettava) {
-        return false;
+
+        return sisalto.poista(poistettava) > 0;
     }
 
+
     @Override
-    public boolean equals(String hakusana) {
-        return false;
+    public String toString() {
+        return super.toString() + "/ " + sisalto.size();
     }
 }

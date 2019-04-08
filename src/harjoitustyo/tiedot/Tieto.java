@@ -62,8 +62,10 @@ public abstract class Tieto implements Comparable<Tieto>, Tietoinen {
     }
 
     public boolean equals(String hakusana){
+        boolean match = false;
 
-        return true;
+
+        return match;
     }
 
     @Override
