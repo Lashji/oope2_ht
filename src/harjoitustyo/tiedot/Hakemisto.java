@@ -21,6 +21,9 @@ public class Hakemisto extends Tieto implements Sailova<Tieto> {
         ylihakemisto = null;
     }
 
+    public OmaLista<Tieto> sisalto(){
+        return sisalto;
+    }
 
     public void ylihakemisto(Hakemisto h){
             ylihakemisto = h;

@@ -56,7 +56,7 @@ public class Tulkki {
                     break;
                 case "ls":
                     System.out.println("ls");
-                    listaaSisalto(parametri);
+                    listaaSisalto();
                     break;
                 case "rm":
                     System.out.println("rm");
@@ -119,17 +119,15 @@ public class Tulkki {
             }
         } else {
             LinkedList<Tieto> lista = sijainti.hae(valinta);
-            if (!lista.isEmpty()){
+            if (!lista.isEmpty()) {
                 sijainti((Hakemisto) lista.getFirst());
             }
         }
 
     }
 
-    private void listaaSisalto(String valinta) {
-
-
-
+    private void listaaSisalto() {
+        this.sijainti.sisalto().forEach(System.out::println);
     }
 
     private void poistaSisaltoa(String valinta) {

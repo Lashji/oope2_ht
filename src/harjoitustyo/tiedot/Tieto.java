@@ -37,18 +37,18 @@ public abstract class Tieto implements Comparable<Tieto>, Tietoinen {
         return nimi.toString();
     }
 
-    public boolean tarkistaNimenOikeellisuus(StringBuilder nimi){
+    public boolean tarkistaNimenOikeellisuus(StringBuilder nimi) {
 
 
-        if (nimi == null || nimi.length() < 1){
+        if (nimi == null) {
             return false;
         }
 
-        String pattern = "^[A-Za-z0-9_.]+$\n";
-
-        if (!nimi.toString().matches(pattern)){
-            return false;
-        }
+//        String pattern = "^[A-Za-z0-9_.]+$\n";
+//
+//        if (!nimi.toString().matches(pattern)) {
+//            return false;
+//        }
 
         return true;
     }
@@ -61,7 +61,7 @@ public abstract class Tieto implements Comparable<Tieto>, Tietoinen {
         return nimi.toString().equals(tieto.toString());
     }
 
-    public boolean equals(String hakusana){
+    public boolean equals(String hakusana) {
         boolean match = false;
 
 
@@ -74,7 +74,7 @@ public abstract class Tieto implements Comparable<Tieto>, Tietoinen {
     }
 
     @Override
-    public int compareTo(Tieto t){
+    public int compareTo(Tieto t) {
         return this.nimi.toString().compareTo(t.toString());
     }
 }
