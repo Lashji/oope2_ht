@@ -96,18 +96,18 @@ public class Tulkki {
 
         sb.append(valinta);
 
-        if (!juuri.lisaa(new Hakemisto(sb, juuri))) {
+        if (!sijainti.lisaa(new Hakemisto(sb, juuri))) {
             System.out.println("Tiedoston lisääminen epäonnistui");
         }
     }
 
     private void teeUusiTiedosto(String valinta, int koko) {
         if (valinta == null || valinta.length() == 0) {
-            juuri.lisaa(new Tiedosto());
+            sijainti.lisaa(new Tiedosto());
         } else {
             StringBuilder sb = new StringBuilder();
             sb.append(valinta);
-            juuri.lisaa(new Tiedosto(sb, koko));
+            sijainti.lisaa(new Tiedosto(sb, koko));
         }
     }
 
