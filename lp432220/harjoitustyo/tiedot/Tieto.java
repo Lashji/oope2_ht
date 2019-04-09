@@ -1,3 +1,5 @@
+// Lassi Palojärvi
+// 432220
 package harjoitustyo.tiedot;
 
 import harjoitustyo.apulaiset.Tietoinen;
@@ -39,31 +41,31 @@ public abstract class Tieto implements Comparable<Tieto>, Tietoinen {
 
     public boolean tarkistaNimenOikeellisuus(StringBuilder nimi) {
 
-
         if (nimi == null) {
             return false;
         }
 
-//        String pattern = "^[A-Za-z0-9_.]+$\n";
-//
-//        if (!nimi.toString().matches(pattern)) {
-//            return false;
-//        }
+        // String pattern = "^[A-Za-z0-9_.]+$\n";
+        //
+        // if (!nimi.toString().matches(pattern)) {
+        // return false;
+        // }
 
         return true;
     }
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Tieto)) return false;
+        if (this == o)
+            return true;
+        if (!(o instanceof Tieto))
+            return false;
         Tieto tieto = (Tieto) o;
         return nimi.toString().equals(tieto.toString());
     }
 
     public boolean equals(String hakusana) {
         boolean match = false;
-
 
         return match;
     }

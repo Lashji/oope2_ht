@@ -1,3 +1,5 @@
+// Lassi Palojärvi
+// 432220
 package harjoitustyo.tulkki;
 
 import harjoitustyo.apulaiset.In;
@@ -12,7 +14,6 @@ public class Tulkki {
 
     private Hakemisto juuri;
     private Hakemisto sijainti;
-
 
     public Tulkki() {
         juuri = new Hakemisto();
@@ -34,58 +35,55 @@ public class Tulkki {
                 parametri = valintaPaloina[1];
             }
 
-
             if (paramPituus >= 3) {
                 parametri2 = valintaPaloina[2];
             }
 
-
             switch (komento) {
 
-                case "md":
-                    System.out.println("md");
-                    teeUusiKansio(parametri);
-                    break;
-                case "mf":
-                    System.out.println("mf");
-                    teeUusiTiedosto(parametri, Integer.valueOf(parametri2));
-                    break;
-                case "cd":
-                    System.out.println("cd");
-                    vaihdaKansiota(parametri);
-                    break;
-                case "ls":
-                    System.out.println("ls");
-                    listaaSisalto();
-                    break;
-                case "rm":
-                    System.out.println("rm");
-                    poistaSisaltoa(parametri);
-                    break;
-                case "mv":
-                    System.out.println("mv");
-                    liikutaSisaltoa(parametri);
-                    break;
-                case "cp":
-                    System.out.println("cp");
-                    kopioi(parametri);
-                    break;
-                case "find":
-                    System.out.println("find");
-                    etsi(parametri);
-                    break;
-                case "exit":
-                    System.out.println("exit");
-                    return false;
-                case "--help":
-                    helpText();
-                    break;
-                default:
-                    System.out.println(ERROR_MESSAGE);
+            case "md":
+                System.out.println("md");
+                teeUusiKansio(parametri);
+                break;
+            case "mf":
+                System.out.println("mf");
+                teeUusiTiedosto(parametri, Integer.valueOf(parametri2));
+                break;
+            case "cd":
+                System.out.println("cd");
+                vaihdaKansiota(parametri);
+                break;
+            case "ls":
+                System.out.println("ls");
+                listaaSisalto();
+                break;
+            case "rm":
+                System.out.println("rm");
+                poistaSisaltoa(parametri);
+                break;
+            case "mv":
+                System.out.println("mv");
+                liikutaSisaltoa(parametri);
+                break;
+            case "cp":
+                System.out.println("cp");
+                kopioi(parametri);
+                break;
+            case "find":
+                System.out.println("find");
+                etsi(parametri);
+                break;
+            case "exit":
+                System.out.println("exit");
+                return false;
+            case "--help":
+                helpText();
+                break;
+            default:
+                System.out.println(ERROR_MESSAGE);
             }
 
         }
-
 
         return true;
     }
@@ -138,7 +136,6 @@ public class Tulkki {
     private void liikutaSisaltoa(String valinta) {
     }
 
-
     private void etsi(String valinta) {
     }
 
@@ -156,26 +153,17 @@ public class Tulkki {
         return sijainti;
     }
 
-
     /*
      * Print functions
      */
 
     public void helloText() {
-        System.out.println("Welcome to SOS." +
-                "\n/>");
+        System.out.println("Welcome to SOS." + "\n/>");
     }
 
     public void helpText() {
-        System.out.println("Commands you can do: " +
-                "\nmd - creates new directory" +
-                "\nmf - creates new file" +
-                "\ncd - changes directory" +
-                "\nls - lists directory" +
-                "\nrm - removes file" +
-                "\nmv - moves file" +
-                "\ncp - copies file" +
-                "\nfind - searchs for a file" +
-                "\nexit - exit program");
+        System.out.println("Commands you can do: " + "\nmd - creates new directory" + "\nmf - creates new file"
+                + "\ncd - changes directory" + "\nls - lists directory" + "\nrm - removes file" + "\nmv - moves file"
+                + "\ncp - copies file" + "\nfind - searchs for a file" + "\nexit - exit program");
     }
 }

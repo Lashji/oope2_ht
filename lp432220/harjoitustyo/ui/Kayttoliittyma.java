@@ -1,3 +1,5 @@
+// Lassi Palojärvi
+// 432220
 package harjoitustyo.ui;
 
 import harjoitustyo.apulaiset.In;
@@ -7,17 +9,15 @@ public class Kayttoliittyma {
     private In in;
     private Tulkki tulkki;
 
-    public Kayttoliittyma(In uusiIn, Tulkki uusiTulkki){
+    public Kayttoliittyma(In uusiIn, Tulkki uusiTulkki) {
         this.in = uusiIn;
         this.tulkki = uusiTulkki;
     }
 
-
-    public void start(){
+    public void start() {
         boolean jatka = true;
 
-
-        while (jatka){
+        while (jatka) {
 
             String valinta = In.readString();
 
@@ -25,11 +25,9 @@ public class Kayttoliittyma {
 
         }
 
-
-
     }
 
-    public static String sanitize(String s){
+    public static String sanitize(String s) {
         return s.toLowerCase().trim();
     }
 }

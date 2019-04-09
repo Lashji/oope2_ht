@@ -1,3 +1,5 @@
+// Lassi Palojärvi
+// 432220
 package harjoitustyo;
 
 import harjoitustyo.tulkki.Tulkki;
