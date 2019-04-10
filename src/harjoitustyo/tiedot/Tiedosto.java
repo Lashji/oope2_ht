@@ -1,3 +1,6 @@
+// Lassi Palojärvi
+// 432220
+
 package harjoitustyo.tiedot;
 
 import harjoitustyo.apulaiset.Syvakopioituva;
@@ -11,12 +14,12 @@ public class Tiedosto extends Tieto implements Syvakopioituva<Tieto> {
 
     }
 
-    public Tiedosto(){
+    public Tiedosto() {
         koko(0);
     }
 
-    public void koko(int uusiKoko) throws IllegalArgumentException{
-        if (koko >= 0) {
+    public void koko(int uusiKoko) throws IllegalArgumentException {
+        if (uusiKoko >= 0) {
             koko = uusiKoko;
         } else {
             throw new IllegalArgumentException();
@@ -25,6 +28,11 @@ public class Tiedosto extends Tieto implements Syvakopioituva<Tieto> {
 
     public int koko() {
         return koko;
+    }
+
+    @Override
+    public boolean equals(Object toinen){
+        return super.equals(toinen);
     }
 
     @Override

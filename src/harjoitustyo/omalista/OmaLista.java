@@ -1,6 +1,7 @@
 package harjoitustyo.omalista;
 
 import harjoitustyo.apulaiset.Ooperoiva;
+
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.ListIterator;
@@ -14,11 +15,11 @@ public class OmaLista<E> extends LinkedList<E> implements Ooperoiva<E> {
 
     @Override
     public boolean lisaa(E uusi) {
-
 //        Instance of palauttaa false jos arvo null. Joten null arvon tarkistaminen ei ole erikseen tarpeen.
         if (uusi instanceof Comparable) {
+            boolean added = add(uusi);
 
-            if (add(uusi)) {
+            if (added) {
 
                 Collections.sort(this, (e, t1) -> {
                     if (e instanceof Comparable && t1 instanceof Comparable) {

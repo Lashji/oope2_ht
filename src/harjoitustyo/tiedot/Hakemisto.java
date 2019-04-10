@@ -70,4 +70,9 @@ public class Hakemisto extends Tieto implements Sailova<Tieto> {
     public String toString() {
         return super.toString() + "/ " + sisalto.size();
     }
+
+    @Override
+    public boolean equals(String hakusana) {
+        return false;
+    }
 }
