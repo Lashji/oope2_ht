@@ -43,7 +43,9 @@ public class OmaLista<E> extends LinkedList<E> implements Ooperoiva<E> {
         int maara = 0;
 
         while (itr.hasNext()) {
-            if (itr.next().equals(poistettava)) {
+
+            E next = itr.next();
+            if (next == poistettava) {
                 itr.remove();
                 maara++;
             }

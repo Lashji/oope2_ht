@@ -34,15 +34,15 @@ public class Oope2HT {
 //        System.out.println("Compare: "+ au.compareTo(fe));
         OmaLista<String> lista = new OmaLista<>();
 
-        String v1 = "A";
-        String v2 = "A";
-        String v3 = "A";
+        String v1 = new String("A");
+        String v2 = new String("A");
+        String v3 = new String("A");
 
         lista.add(v1);
         lista.add(v2);
         lista.add(v3);
         System.out.println("Lista: " + lista);
-        lista.remove(v3);
+        System.out.println("Paluuarvo: " + lista.poista(v3));
         System.out.println("Lista. " + lista);
 
     }
