@@ -48,7 +48,7 @@ public class Hakemisto extends Tieto implements Sailova<Tieto> {
     public LinkedList<Tieto> hae(String hakusana) {
         LinkedList<Tieto> lista = new LinkedList<>();
         for (Tieto t : sisalto) {
-            if (t.nimi().equals(hakusana)) {
+            if (t.equals(hakusana)) {
                 lista.add(t);
             }
         }

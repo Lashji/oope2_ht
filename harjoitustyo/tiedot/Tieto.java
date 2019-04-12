@@ -125,10 +125,11 @@ public abstract class Tieto implements Comparable<Tieto>, Tietoinen {
             if (ca[i] == '*') {
                 maara++;
                 if (i + 1 < ca.length) {
-                    if (ca[i + 1] == '*') {
+                    if (ca[i + 1] == '*' || (maara == 2 && i != ca.length - 1)) {
                         return -1;
                     }
                 }
+
             }
         }
 
