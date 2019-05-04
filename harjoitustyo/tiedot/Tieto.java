@@ -3,10 +3,17 @@
 package harjoitustyo.tiedot;
 
 import harjoitustyo.apulaiset.Tietoinen;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.InvalidClassException;
+import java.io.NotSerializableException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 
 import java.util.Objects;
 
-public abstract class Tieto implements Comparable<Tieto>, Tietoinen {
+public abstract class Tieto implements Comparable<Tieto>, Tietoinen, Serializable {
 
     private StringBuilder nimi;
 
@@ -53,10 +60,12 @@ public abstract class Tieto implements Comparable<Tieto>, Tietoinen {
     @Override
     public boolean equals(Object o) {
 
-        if (this == o)
+        if (this == o) {
             return true;
-        if (!(o instanceof Tieto))
+        }
+        if (!(o instanceof Tieto)) {
             return false;
+        }
 
         Tieto tieto = (Tieto) o;
         return nimi().toString().equals(tieto.nimi().toString());
@@ -64,12 +73,13 @@ public abstract class Tieto implements Comparable<Tieto>, Tietoinen {
     }
 
     public boolean equals(String hakusana) {
-        if (hakusana == null)
+        if (hakusana == null) {
             return false;
-        else if (this.nimi().toString().equals(hakusana))
+        } else if (this.nimi().toString().equals(hakusana)) {
             return true;
-        else if (hakusana.equals("*"))
+        } else if (hakusana.equals("*")) {
             return true;
+        }
 
         String tmpString = hakusana.replaceAll("\\*", "");
         switch (moodi(hakusana)) {
@@ -86,7 +96,6 @@ public abstract class Tieto implements Comparable<Tieto>, Tietoinen {
     }
 
 //
-
     public int moodi(String hakusana) {
         int maara = jokerienMaara(hakusana);
 
@@ -95,15 +104,15 @@ public abstract class Tieto implements Comparable<Tieto>, Tietoinen {
         }
 
         if (maara == 1) {
-            if (hakusana.startsWith("*"))
+            if (hakusana.startsWith("*")) {
                 return 1;
-            else
+            } else {
                 return 2;
+            }
         }
 
         return 0;
     }
-
 
     @Override
     public int hashCode() {
@@ -139,4 +148,48 @@ public abstract class Tieto implements Comparable<Tieto>, Tietoinen {
 
         return maara;
     }
+
+    public Tieto copy() {
+        try {
+            // Byte-tyyppisten alkioiden (tavujen) taulukkoon kirjoittava virta.
+            ByteArrayOutputStream bos = new ByteArrayOutputStream();
+
+            // Olion tavuiksi muuntava virta, joka liittyy taulukkoon kirjoittavaan
+            // virtaan.
+            ObjectOutputStream oos = new ObjectOutputStream(bos);
+
+            // Kirjoitetaan olio tavumuodossa taulukkoon.
+            oos.writeObject(this);
+
+            // Tyhjennetään puskuri ja suljetaan virta.
+            oos.flush();
+            oos.close();
+
+            // Liitetään taulukkoon tavuja lukeva syötevirta.
+            ByteArrayInputStream bis = new ByteArrayInputStream(bos.toByteArray());
+
+            // Tavut olioksi muuttava virta, joka liittyy taulukosta lukevaan virtaan.
+            ObjectInputStream ois = new ObjectInputStream(bis);
+
+            // Kopio saadaan aikaiseksi lukemalla olion tavut taulukosta.
+            Object kopio = ois.readObject();
+
+            // Palautetaan oikean tyyppinen viite.
+            return (Tieto) kopio;
+        } // Sarjallistettavan olion oletusrakentaja hukassa.
+        catch (InvalidClassException e) {
+            e.printStackTrace();
+            return null;
+        } // Löytyi olio, joka ei sarjallistu.
+        catch (NotSerializableException e) {
+            e.printStackTrace();
+            return null;
+        } // Tapahtui jotain yllättävää.
+        catch (Exception e) {
+            System.out.println("Paniikki!");
+            e.printStackTrace();
+            return null;
+        }
+    }
+
 }

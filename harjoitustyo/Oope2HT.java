@@ -18,8 +18,8 @@ public class Oope2HT {
         Tulkki tulkki = new Tulkki();
         Kayttoliittyma ui = new Kayttoliittyma(in, tulkki);
 
-//        ui.start();
-        Testi();
+        ui.start();
+//        Testi();
     }
 
     public static void Testi() {

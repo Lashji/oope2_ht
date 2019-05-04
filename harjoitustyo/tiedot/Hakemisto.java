@@ -3,12 +3,15 @@
 package harjoitustyo.tiedot;
 
 import harjoitustyo.apulaiset.Sailova;
+import harjoitustyo.iteraattorit.HakemistoIteraattori;
 import harjoitustyo.omalista.OmaLista;
+import java.util.Iterator;
 
 import java.util.LinkedList;
 
 // Hakemisto
-public class Hakemisto extends Tieto implements Sailova<Tieto> {
+public class Hakemisto extends Tieto implements Sailova<Tieto>, Iterable<Tieto> {
+
     private OmaLista<Tieto> sisalto;
     private Hakemisto ylihakemisto;
 
@@ -74,5 +77,12 @@ public class Hakemisto extends Tieto implements Sailova<Tieto> {
     @Override
     public boolean equals(String hakusana) {
         return false;
+    }
+
+    @Override
+    public Iterator<Tieto> iterator() {
+
+        return new HakemistoIteraattori<>();
+
     }
 }
