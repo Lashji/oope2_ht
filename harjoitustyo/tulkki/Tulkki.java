@@ -159,8 +159,9 @@ public class Tulkki {
             List<Tieto> hae = sijainti.hae(valinta);
             
             HakemistoIteraattori<Tieto> hi = new HakemistoIteraattori<Tieto>();
-            
-            
+
+
+
             System.out.println(hae.isEmpty() ? "löytyi" : "ei löytynyt");
 
         }
