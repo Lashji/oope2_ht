@@ -81,8 +81,6 @@ public class Hakemisto extends Tieto implements Sailova<Tieto>, Iterable<Tieto> 
 
     @Override
     public Iterator<Tieto> iterator() {
-
-        return new HakemistoIteraattori<>();
-
+        return new HakemistoIteraattori<>(sisalto);
     }
 }

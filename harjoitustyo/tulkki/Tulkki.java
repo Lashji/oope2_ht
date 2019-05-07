@@ -2,12 +2,13 @@
 // 432220
 package harjoitustyo.tulkki;
 
-import harjoitustyo.apulaiset.In;
 import harjoitustyo.iteraattorit.HakemistoIteraattori;
+import harjoitustyo.omalista.OmaLista;
 import harjoitustyo.tiedot.Hakemisto;
 import harjoitustyo.tiedot.Tiedosto;
 import harjoitustyo.tiedot.Tieto;
 
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -45,45 +46,36 @@ public class Tulkki {
             switch (komento) {
 
                 case "md":
-                    System.out.println("md");
                     teeUusiKansio(parametri);
                     break;
                 case "mf":
-                    System.out.println("mf");
                     if (parametri != null) {
                         teeUusiTiedosto(parametri, parametri2.isEmpty() ? 0 : Integer.valueOf(parametri2));
                     }
                     break;
                 case "cd":
-                    System.out.println("cd");
                     vaihdaKansiota(parametri);
                     break;
                 case "ls":
-                    System.out.println("ls");
                     listaaSisalto();
                     break;
                 case "rm":
-                    System.out.println("rm");
                     poistaSisaltoa(parametri);
                     break;
                 case "mv":
-                    System.out.println("mv");
                     if (!parametri.isEmpty() && !parametri2.isEmpty()) {
                         muutaNimi(parametri, parametri2);
                     }
                     break;
                 case "cp":
-                    System.out.println("cp");
                     if (!parametri.isEmpty() && !parametri2.isEmpty()) {
                         kopioi(parametri, parametri2);
                     }
                     break;
                 case "find":
-                    System.out.println("find");
-                    etsi(parametri);
+                    find();
                     break;
                 case "exit":
-                    System.out.println("exit");
                     return false;
                 case "--help":
                     helpText();
@@ -119,7 +111,6 @@ public class Tulkki {
     }
 
     private void vaihdaKansiota(String valinta) {
-
         if (valinta.equals("..")) {
             if (!sijainti.equals(juuri)) {
                 sijainti(sijainti.ylihakemisto());
@@ -130,7 +121,6 @@ public class Tulkki {
                 sijainti((Hakemisto) lista.getFirst());
             }
         }
-
     }
 
     private void listaaSisalto() {
@@ -154,21 +144,26 @@ public class Tulkki {
         }
     }
 
-    private void etsi(String valinta) {
-        if (valinta != null) {
-            List<Tieto> hae = sijainti.hae(valinta);
-            
-            HakemistoIteraattori<Tieto> hi = new HakemistoIteraattori<Tieto>();
+    private void find() {
+        OmaLista<Tieto> tiedot = new OmaLista<Tieto>();
+        lisaa(sijainti, tiedot);
+        tiedot.forEach(System.out::println);
+    }
 
+    private void lisaa(Hakemisto hakemisto, OmaLista<Tieto> tiedot) {
+        Iterator<Tieto> itr = hakemisto.iterator();
 
-
-            System.out.println(hae.isEmpty() ? "löytyi" : "ei löytynyt");
-
+        while (itr.hasNext()) {
+            Tieto t = itr.next();
+            tiedot.add(t);
+            if (t instanceof Hakemisto) {
+                lisaa((Hakemisto) t, tiedot);
+            }
         }
+
     }
 
     private void kopioi(String vanhaTiedosto, String uusiNimi) {
-
         List<Tieto> vanhaTietoListana = sijainti.hae(vanhaTiedosto);
         Tieto vanhaTieto = !vanhaTietoListana.isEmpty() ? vanhaTietoListana.get(0) : null;
 
