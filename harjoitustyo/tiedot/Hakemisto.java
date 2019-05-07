@@ -5,6 +5,7 @@ package harjoitustyo.tiedot;
 import harjoitustyo.apulaiset.Sailova;
 import harjoitustyo.iteraattorit.HakemistoIteraattori;
 import harjoitustyo.omalista.OmaLista;
+
 import java.util.Iterator;
 
 import java.util.LinkedList;
@@ -65,18 +66,25 @@ public class Hakemisto extends Tieto implements Sailova<Tieto>, Iterable<Tieto> 
 
     @Override
     public boolean poista(Tieto poistettava) {
-
         return sisalto.poista(poistettava) > 0;
+    }
+
+    public String getNimiAsString() {
+        return super.nimi().toString();
     }
 
     @Override
     public String toString() {
         return super.toString() + "/ " + sisalto.size();
     }
-
+    public String getPolku(){
+        return super.toString() + "/";
+    }
     @Override
     public boolean equals(String hakusana) {
-        return false;
+        boolean e = super.equals(hakusana);
+        if (e) return e;
+        return getNimiAsString().equals(hakusana);
     }
 
     @Override

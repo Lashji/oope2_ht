@@ -52,7 +52,7 @@ public abstract class Tieto implements Comparable<Tieto>, Tietoinen, Serializabl
             return false;
         }
 
-        String pattern = "^$|^([\\w]+(\\.[\\w]+)?)";
+        String pattern = "^$|^([\\w/]+(\\.[\\w]+)?)";
 
         return nimi.toString().matches(pattern);
     }

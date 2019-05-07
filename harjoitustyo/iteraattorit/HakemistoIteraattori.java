@@ -2,7 +2,7 @@ package harjoitustyo.iteraattorit;
 
 import harjoitustyo.omalista.OmaLista;
 import java.util.Iterator;
-
+// HakemistoIteraattori
 public class HakemistoIteraattori<E> implements Iterator<E> {
     private OmaLista<E> sisalto;
 

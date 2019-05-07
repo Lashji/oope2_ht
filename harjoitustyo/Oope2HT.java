@@ -14,9 +14,9 @@ import java.util.LinkedList;
 
 public class Oope2HT {
     public static void main(String[] args) {
-        In in = new In();
+
         Tulkki tulkki = new Tulkki();
-        Kayttoliittyma ui = new Kayttoliittyma(in, tulkki);
+        Kayttoliittyma ui = new Kayttoliittyma(tulkki);
 
         ui.start();
 //        Testi();

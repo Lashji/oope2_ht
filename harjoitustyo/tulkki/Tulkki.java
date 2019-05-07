@@ -2,12 +2,10 @@
 // 432220
 package harjoitustyo.tulkki;
 
-import harjoitustyo.iteraattorit.HakemistoIteraattori;
 import harjoitustyo.omalista.OmaLista;
 import harjoitustyo.tiedot.Hakemisto;
 import harjoitustyo.tiedot.Tiedosto;
 import harjoitustyo.tiedot.Tieto;
-
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
@@ -15,14 +13,15 @@ import java.util.List;
 public class Tulkki {
 
     private static final String ERROR_MESSAGE = "ERROR!";
-
     private Hakemisto juuri;
     private Hakemisto sijainti;
-
+    private String path;
     public Tulkki() {
         juuri = new Hakemisto();
+        juuri.nimi(new StringBuilder("/"));
         sijainti(juuri);
-        helloText();
+        path = juuri.nimi()+">";
+        aloitusTeksti();
     }
 
     public boolean komento(String valinta) throws IllegalArgumentException, NumberFormatException {
@@ -78,12 +77,11 @@ public class Tulkki {
                 case "exit":
                     return false;
                 case "--help":
-                    helpText();
+                    apuTeksti();
                     break;
                 default:
                     System.out.println(ERROR_MESSAGE);
             }
-
         }
 
         return true;
@@ -92,7 +90,7 @@ public class Tulkki {
     private void teeUusiKansio(String valinta) {
 
         StringBuilder sb = new StringBuilder();
-
+        sb.append(sijainti.nimi());
         sb.append(valinta);
 
         if (!sijainti.lisaa(new Hakemisto(sb, juuri))) {
@@ -111,6 +109,10 @@ public class Tulkki {
     }
 
     private void vaihdaKansiota(String valinta) {
+
+        if (valinta == null || valinta.isEmpty())
+            return;
+
         if (valinta.equals("..")) {
             if (!sijainti.equals(juuri)) {
                 sijainti(sijainti.ylihakemisto());
@@ -121,10 +123,17 @@ public class Tulkki {
                 sijainti((Hakemisto) lista.getFirst());
             }
         }
+
+        paivitaPolku();
+    }
+
+
+    private void paivitaPolku() {
+        path = sijainti.getPolku();
     }
 
     private void listaaSisalto() {
-        System.out.println("tietojen maara: " + sijainti.sisalto().size());
+//        System.out.println("tietojen maara: " + sijainti.sisalto().size());
         this.sijainti.sisalto().forEach(System.out::println);
     }
 
@@ -145,7 +154,7 @@ public class Tulkki {
     }
 
     private void find() {
-        OmaLista<Tieto> tiedot = new OmaLista<Tieto>();
+        OmaLista<Tieto> tiedot = new OmaLista<>();
         lisaa(sijainti, tiedot);
         tiedot.forEach(System.out::println);
     }
@@ -189,13 +198,21 @@ public class Tulkki {
     /*
      * Print functions
      */
-    public void helloText() {
-        System.out.println("Welcome to SOS." + "\n/>");
+    public void aloitusTeksti() {
+        System.out.println("Welcome to SOS.\n" + path);
     }
 
-    public void helpText() {
+    public void apuTeksti() {
         System.out.println("Commands you can do: " + "\nmd - creates new directory" + "\nmf - creates new file"
                 + "\ncd - changes directory" + "\nls - lists directory" + "\nrm - removes file" + "\nmv - moves file"
                 + "\ncp - copies file" + "\nfind - searchs for a file" + "\nexit - exit program");
+    }
+
+    public void tulostaPolku() {
+        System.out.println(path);
+    }
+
+    public void tulostaError(){
+        System.out.println(ERROR_MESSAGE);
     }
 }

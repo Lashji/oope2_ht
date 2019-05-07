@@ -6,11 +6,9 @@ import harjoitustyo.apulaiset.In;
 import harjoitustyo.tulkki.Tulkki;
 
 public class Kayttoliittyma {
-    private In in;
     private Tulkki tulkki;
 
-    public Kayttoliittyma(In uusiIn, Tulkki uusiTulkki) {
-        this.in = uusiIn;
+    public Kayttoliittyma(Tulkki uusiTulkki) {
         this.tulkki = uusiTulkki;
     }
 
@@ -20,11 +18,12 @@ public class Kayttoliittyma {
         while (jatka) {
 
             String valinta = In.readString();
-
             jatka = tulkki.komento(sanitize(valinta));
 
+            if (jatka)
+                tulkki.tulostaPolku();
         }
-
+        System.out.println("Shell terminated.");
     }
 
     public static String sanitize(String s) {
