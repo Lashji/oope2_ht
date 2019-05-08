@@ -18,7 +18,7 @@ public class Kayttoliittyma {
         while (jatka) {
 
             String valinta = In.readString();
-            jatka = tulkki.komento(sanitize(valinta));
+            jatka = tulkki.komento(valinta);
 
             if (jatka)
                 tulkki.tulostaPolku();
@@ -26,7 +26,7 @@ public class Kayttoliittyma {
         System.out.println("Shell terminated.");
     }
 
-    public static String sanitize(String s) {
-        return s.toLowerCase().trim();
-    }
+//    public static String sanitize(String s) {
+//        return s.toLowerCase().trim();
+//    }
 }

@@ -6,21 +6,25 @@ import harjoitustyo.omalista.OmaLista;
 import harjoitustyo.tiedot.Hakemisto;
 import harjoitustyo.tiedot.Tiedosto;
 import harjoitustyo.tiedot.Tieto;
+
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
 public class Tulkki {
 
-    private static final String ERROR_MESSAGE = "ERROR!";
+    private static final String ERROR_MESSAGE = "Error!";
     private Hakemisto juuri;
     private Hakemisto sijainti;
-    private String path;
+    private List<String> path;
+
     public Tulkki() {
         juuri = new Hakemisto();
         juuri.nimi(new StringBuilder("/"));
         sijainti(juuri);
-        path = juuri.nimi()+">";
+        path = new ArrayList<>();
+        path.add(juuri.nimi().toString());
         aloitusTeksti();
     }
 
@@ -45,18 +49,45 @@ public class Tulkki {
             switch (komento) {
 
                 case "md":
-                    teeUusiKansio(parametri);
+                    if (parametri != null && !parametri.isEmpty() &&
+                            !tarkistaOnkoNimiOlemassa(parametri) && paramPituus == 2)
+                        try {
+                            teeUusiKansio(parametri);
+                        } catch (IllegalArgumentException e) {
+                            System.out.println(ERROR_MESSAGE);
+                        }
+                    else
+                        System.out.println(ERROR_MESSAGE);
                     break;
                 case "mf":
-                    if (parametri != null) {
-                        teeUusiTiedosto(parametri, parametri2.isEmpty() ? 0 : Integer.valueOf(parametri2));
+                    if (parametri != null && !parametri.isEmpty() && paramPituus <= 3
+                            && !tarkistaOnkoNimiOlemassa(parametri)) {
+                        try {
+                            teeUusiTiedosto(parametri, parametri2.isEmpty() ? 0 : Integer.valueOf(parametri2));
+                        } catch (IllegalArgumentException e) {
+                            System.out.println(ERROR_MESSAGE);
+                        }
+                    } else {
+                        System.out.println(ERROR_MESSAGE);
+
                     }
                     break;
                 case "cd":
-                    vaihdaKansiota(parametri);
+                    if (parametri == null || paramPituus > 2) {
+                        System.out.println(ERROR_MESSAGE);
+                    } else {
+                        vaihdaKansiota(parametri);
+                    }
                     break;
                 case "ls":
-                    listaaSisalto();
+//                   Jos haetaan parametrilla tarkistetaan että Tieto on olemassa
+                    if (!parametri.isEmpty())
+                        if (tarkistaOnkoNimiOlemassa(parametri) && paramPituus == 2)
+                            listaaSisalto(parametri);
+                        else
+                            System.out.println(ERROR_MESSAGE);
+                    else
+                        listaaSisalto(parametri);
                     break;
                 case "rm":
                     poistaSisaltoa(parametri);
@@ -87,18 +118,30 @@ public class Tulkki {
         return true;
     }
 
-    private void teeUusiKansio(String valinta) {
+    private boolean tarkistaOnkoNimiOlemassa(String parametri) {
+
+        if (parametri.contains("*"))
+            return true;
+
+        for (Tieto t : sijainti.sisalto()) {
+            if (t.nimi().toString().equals(parametri)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private void teeUusiKansio(String valinta) throws IllegalArgumentException {
 
         StringBuilder sb = new StringBuilder();
-        sb.append(sijainti.nimi());
         sb.append(valinta);
 
-        if (!sijainti.lisaa(new Hakemisto(sb, juuri))) {
+        if (!sijainti.lisaa(new Hakemisto(sb, this.sijainti))) {
             System.out.println("Tiedoston lisääminen epäonnistui");
         }
     }
 
-    private void teeUusiTiedosto(String valinta, int koko) {
+    private void teeUusiTiedosto(String valinta, int koko) throws IllegalArgumentException {
         if (valinta == null || valinta.length() == 0) {
             sijainti.lisaa(new Tiedosto());
         } else {
@@ -110,36 +153,54 @@ public class Tulkki {
 
     private void vaihdaKansiota(String valinta) {
 
-        if (valinta == null || valinta.isEmpty())
+        if (valinta == null || valinta.isEmpty()) {
+            sijainti(juuri);
+            path.clear();
+            path.add(juuri.nimi().toString());
             return;
+        }
 
         if (valinta.equals("..")) {
             if (!sijainti.equals(juuri)) {
+                path.remove(path.size() - 1);
                 sijainti(sijainti.ylihakemisto());
+            } else {
+                System.out.println(ERROR_MESSAGE);
             }
         } else {
             LinkedList<Tieto> lista = sijainti.hae(valinta);
             if (!lista.isEmpty()) {
-                sijainti((Hakemisto) lista.getFirst());
+                if (lista.getFirst() instanceof Hakemisto) {
+                    sijainti((Hakemisto) lista.getFirst());
+                    path.add(sijainti.nimi().toString());
+                } else {
+                    System.out.println(ERROR_MESSAGE);
+                }
+            } else {
+                System.out.println(ERROR_MESSAGE);
             }
         }
 
-        paivitaPolku();
     }
 
 
-    private void paivitaPolku() {
-        path = sijainti.getPolku();
-    }
+    private void listaaSisalto(String parametri) {
 
-    private void listaaSisalto() {
-//        System.out.println("tietojen maara: " + sijainti.sisalto().size());
-        this.sijainti.sisalto().forEach(System.out::println);
+        if (parametri.isEmpty()) {
+            this.sijainti.sisalto().forEach(System.out::println);
+            return;
+        }
+
+        LinkedList<Tieto> haku = sijainti.hae(parametri);
+        if (haku != null && haku.size() > 0) haku.forEach(System.out::println);
     }
 
     private void poistaSisaltoa(String valinta) {
-        Tieto tmp = sijainti.hae(valinta).get(0);
-        sijainti.poista(tmp);
+        LinkedList<Tieto> tmp = sijainti.hae(valinta);
+
+        for (Tieto t : tmp) {
+            sijainti.poista(t);
+        }
     }
 
     private void muutaNimi(String vanhaNimi, String uusiNimi) {
@@ -150,6 +211,9 @@ public class Tulkki {
             if (lista.isEmpty()) {
                 vanhaTieto.get(0).nimi(new StringBuilder(uusiNimi));
             }
+
+            sijainti.sisalto().jarjesta();
+
         }
     }
 
@@ -199,7 +263,8 @@ public class Tulkki {
      * Print functions
      */
     public void aloitusTeksti() {
-        System.out.println("Welcome to SOS.\n" + path);
+        System.out.print("Welcome to SOS.\n");
+        tulostaPolku();
     }
 
     public void apuTeksti() {
@@ -209,10 +274,19 @@ public class Tulkki {
     }
 
     public void tulostaPolku() {
-        System.out.println(path);
+        StringBuilder sb = new StringBuilder();
+
+        for (String s : path) {
+            sb.append(s);
+            if (!s.equals("/"))
+                sb.append("/");
+        }
+
+        sb.append(">");
+        System.out.println(sb.toString());
     }
 
-    public void tulostaError(){
+    public void tulostaError() {
         System.out.println(ERROR_MESSAGE);
     }
 }

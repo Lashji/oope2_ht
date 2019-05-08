@@ -69,22 +69,25 @@ public class Hakemisto extends Tieto implements Sailova<Tieto>, Iterable<Tieto> 
         return sisalto.poista(poistettava) > 0;
     }
 
-    public String getNimiAsString() {
-        return super.nimi().toString();
+    public void listaaSisalto() {
+        System.out.println(toString());
+        sisalto.forEach(System.out::println);
     }
 
     @Override
     public String toString() {
-        return super.toString() + "/ " + sisalto.size();
+        return super.toString() + (!nimi().toString().equals("/") ? "/ " : " ") + sisalto.size();
     }
-    public String getPolku(){
-        return super.toString() + "/";
+
+    public String getPolku() {
+        return super.toString();
     }
+
     @Override
     public boolean equals(String hakusana) {
         boolean e = super.equals(hakusana);
         if (e) return e;
-        return getNimiAsString().equals(hakusana);
+        return nimi().toString().equals(hakusana);
     }
 
     @Override

@@ -41,7 +41,7 @@ public class Tiedosto extends Tieto implements Syvakopioituva<Tieto> {
     }
 
     @Override
-    public Tieto kopioi() {
-        return null;
+    public Tiedosto kopioi() {
+        return (Tiedosto) super.copy();
     }
 }

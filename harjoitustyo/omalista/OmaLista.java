@@ -20,17 +20,7 @@ public class OmaLista<E> extends LinkedList<E> implements Ooperoiva<E> {
             boolean added = add(uusi);
 
             if (added) {
-
-                Collections.sort(this, (e, t1) -> {
-                    if (e instanceof Comparable && t1 instanceof Comparable) {
-
-                        Comparable t = (Comparable) e;
-                        Comparable t2 = (Comparable) t1;
-
-                        return t.compareTo(t2);
-                    }
-                    return 0;
-                });
+                jarjesta();
                 return true;
             }
         }
@@ -51,5 +41,18 @@ public class OmaLista<E> extends LinkedList<E> implements Ooperoiva<E> {
             }
         }
         return maara;
+    }
+
+    public void jarjesta() {
+        Collections.sort(this, (e, t1) -> {
+            if (e instanceof Comparable && t1 instanceof Comparable) {
+
+                Comparable t = (Comparable) e;
+                Comparable t2 = (Comparable) t1;
+
+                return t.compareTo(t2);
+            }
+            return 0;
+        });
     }
 }
