@@ -90,16 +90,38 @@ public class Tulkki {
                         listaaSisalto(parametri);
                     break;
                 case "rm":
-                    poistaSisaltoa(parametri);
+                    if (!parametri.isEmpty() && paramPituus == 2 && tarkistaOnkoNimiOlemassa(parametri))
+                        try {
+                            poistaSisaltoa(parametri);
+                        } catch (Exception e) {
+                            System.out.println(ERROR_MESSAGE);
+                        }
+                    else
+                        System.out.println(ERROR_MESSAGE);
                     break;
                 case "mv":
-                    if (!parametri.isEmpty() && !parametri2.isEmpty()) {
-                        muutaNimi(parametri, parametri2);
+                    if (!parametri.isEmpty() && !parametri2.isEmpty()
+                            && paramPituus == 3
+                            && tarkistaOnkoNimiOlemassa(parametri)
+                            && !tarkistaOnkoNimiOlemassa(parametri2)) {
+                        try {
+
+                            muutaNimi(parametri, parametri2);
+                        } catch (IllegalArgumentException e) {
+                            System.out.println(ERROR_MESSAGE);
+                        }
+                    } else {
+                        System.out.println(ERROR_MESSAGE);
                     }
                     break;
                 case "cp":
-                    if (!parametri.isEmpty() && !parametri2.isEmpty()) {
+                    if (!parametri.isEmpty() && !parametri2.isEmpty()
+                            && paramPituus == 3
+                            && tarkistaOnkoNimiOlemassa(parametri)
+                            && !tarkistaOnkoNimiOlemassa(parametri2)) {
                         kopioi(parametri, parametri2);
+                    } else {
+                        System.out.println(ERROR_MESSAGE);
                     }
                     break;
                 case "find":
@@ -192,18 +214,24 @@ public class Tulkki {
         }
 
         LinkedList<Tieto> haku = sijainti.hae(parametri);
-        if (haku != null && haku.size() > 0) haku.forEach(System.out::println);
+        if (haku != null && haku.size() > 0)
+            haku.forEach(System.out::println);
+        else if (parametri.equals("*.txt") || parametri.equals("*.gif")) {
+            System.out.println(ERROR_MESSAGE);
+        }
+
     }
 
-    private void poistaSisaltoa(String valinta) {
+    private void poistaSisaltoa(String valinta) throws IllegalArgumentException {
         LinkedList<Tieto> tmp = sijainti.hae(valinta);
+        if (tmp.isEmpty()) throw new IllegalArgumentException();
 
         for (Tieto t : tmp) {
             sijainti.poista(t);
         }
     }
 
-    private void muutaNimi(String vanhaNimi, String uusiNimi) {
+    private void muutaNimi(String vanhaNimi, String uusiNimi) throws IllegalArgumentException {
         List<Tieto> vanhaTieto = sijainti.hae(vanhaNimi);
 
         if (!vanhaTieto.isEmpty()) {
@@ -211,9 +239,9 @@ public class Tulkki {
             if (lista.isEmpty()) {
                 vanhaTieto.get(0).nimi(new StringBuilder(uusiNimi));
             }
-
             sijainti.sisalto().jarjesta();
-
+        } else {
+            throw new IllegalArgumentException();
         }
     }
 
