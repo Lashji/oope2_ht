@@ -118,14 +118,18 @@ public class Tulkki {
                     if (!parametri.isEmpty() && !parametri2.isEmpty()
                             && paramPituus == 3
                             && tarkistaOnkoNimiOlemassa(parametri)
-                            && !tarkistaOnkoNimiOlemassa(parametri2)) {
+                    ) {
                         kopioi(parametri, parametri2);
                     } else {
                         System.out.println(ERROR_MESSAGE);
                     }
                     break;
                 case "find":
-                    find();
+                    if (paramPituus == 1) {
+                        find();
+                    } else {
+                        System.out.println(ERROR_MESSAGE);
+                    }
                     break;
                 case "exit":
                     return false;
@@ -246,32 +250,91 @@ public class Tulkki {
     }
 
     private void find() {
-        OmaLista<Tieto> tiedot = new OmaLista<>();
-        lisaa(sijainti, tiedot);
-        tiedot.forEach(System.out::println);
-    }
-
-    private void lisaa(Hakemisto hakemisto, OmaLista<Tieto> tiedot) {
-        Iterator<Tieto> itr = hakemisto.iterator();
+        Iterator<Tieto> itr = sijainti.iterator();
 
         while (itr.hasNext()) {
-            Tieto t = itr.next();
-            tiedot.add(t);
-            if (t instanceof Hakemisto) {
-                lisaa((Hakemisto) t, tiedot);
+            System.out.println(itr.next());
+        }
+    }
+
+    private void kopioi(String vanhaNimi, String uusiNimi) {
+
+        if (vanhaNimi.startsWith("*") && !uusiNimi.isEmpty()) {
+            kopioiLista(vanhaNimi, uusiNimi);
+            return;
+        }
+
+        if (vanhaNimi.startsWith("*") && uusiNimi.isEmpty()) {
+            System.out.println(ERROR_MESSAGE);
+            return;
+        }
+
+        LinkedList<Tieto> uusi = sijainti.hae(uusiNimi);
+
+
+        List<Tieto> vanhaTietoListana = sijainti.hae(vanhaNimi);
+        Tieto vanhaTieto = !vanhaTietoListana.isEmpty() ? vanhaTietoListana.get(0) : null;
+        if (!sijainti.hae(vanhaNimi).isEmpty() && vanhaTieto != null) {
+            Tieto kopio = vanhaTieto.copy();
+            if (kopio instanceof Hakemisto) {
+                System.out.println(ERROR_MESSAGE);
+                return;
+            }
+            if (uusi.size() > 0) {
+
+                if (uusi.getFirst() instanceof Hakemisto) {
+                    Hakemisto uusih = (Hakemisto) uusi.getFirst();
+                    kopio.nimi(new StringBuilder(vanhaNimi));
+
+                    if (uusih.hae(vanhaNimi).size() == 0 || vanhaTieto instanceof Hakemisto)
+                        uusih.sisalto().lisaa(kopio);
+                    else {
+                        System.out.println(ERROR_MESSAGE);
+                    }
+                } else {
+                    System.out.println(ERROR_MESSAGE);
+                }
+            } else {
+                kopio.nimi(new StringBuilder(uusiNimi));
+                sijainti.lisaa(kopio);
+            }
+        }
+    }
+
+    private void kopioiLista(String vanhaNimi, String uusiNimi) {
+
+        LinkedList<Tieto> haut = sijainti.hae(vanhaNimi);
+        Tieto h = sijainti.ylihakemisto();
+        if (uusiNimi.equals("..")) {
+            h = (Hakemisto) sijainti.ylihakemisto();
+            if (h.equals(juuri) && h == null) {
+                System.out.println(ERROR_MESSAGE);
+            }
+        } else {
+            LinkedList<Tieto> haku = sijainti.hae(uusiNimi);
+            if (haku.size() == 0) {
+                System.out.println(ERROR_MESSAGE);
+                return;
+            } else {
+                h = haku.getFirst();
             }
         }
 
-    }
-
-    private void kopioi(String vanhaTiedosto, String uusiNimi) {
-        List<Tieto> vanhaTietoListana = sijainti.hae(vanhaTiedosto);
-        Tieto vanhaTieto = !vanhaTietoListana.isEmpty() ? vanhaTietoListana.get(0) : null;
-
-        if (!sijainti.hae(vanhaTiedosto).isEmpty() && vanhaTieto != null) {
-            Tieto kopio = vanhaTieto.copy();
-            kopio.nimi(new StringBuilder(uusiNimi));
-            sijainti.lisaa(kopio);
+        if (h instanceof Hakemisto) {
+            for (Tieto t : haut) {
+                for (Tieto tt : ((Hakemisto) h).sisalto()) {
+                    if (t.equals(tt)) {
+                        System.out.println(ERROR_MESSAGE);
+                        return;
+                    }
+                }
+            }
+            for (Tieto t : haut) {
+                Tieto k = t.copy();
+                ((Hakemisto) h).lisaa(k);
+            }
+        } else {
+            System.out.println(ERROR_MESSAGE);
         }
     }
 

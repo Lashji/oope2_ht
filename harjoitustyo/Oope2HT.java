@@ -10,6 +10,7 @@ import harjoitustyo.tulkki.Tulkki;
 import harjoitustyo.ui.Kayttoliittyma;
 import harjoitustyo.apulaiset.In;
 
+import java.util.Iterator;
 import java.util.LinkedList;
 
 public class Oope2HT {
@@ -23,51 +24,36 @@ public class Oope2HT {
     }
 
     public static void Testi() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("tiedosto");
+        // Luodaan hakemistot. Alihakemistoista asetetaan viitteet ylihakemistoon
+// ja alihakemistot lisätään ylihakemistoon.
+        Hakemisto ylihakemisto = new Hakemisto(new StringBuilder("pics"), null);
+        Hakemisto alihakemisto1 = new Hakemisto(new StringBuilder("cats"), ylihakemisto);
+        Hakemisto alihakemisto2 = new Hakemisto(new StringBuilder("dogs"), ylihakemisto);
+        ylihakemisto.lisaa(alihakemisto1);
+        ylihakemisto.lisaa(alihakemisto2);
 
-//        Tiedosto t1 = new Tiedosto(sb, 1);
-//        Tiedosto t2 = new Tiedosto(sb, 2);
-//        StringBuilder sb1 = new StringBuilder("au.gif");
-//        StringBuilder sb2 = new StringBuilder("fe.gif");
-//
-//        Tiedosto au = new Tiedosto(sb1, 1);
-//        Tiedosto fe = new Tiedosto(sb2, 1);
-//
-//        System.out.println("Equals " + t1.equals(t2));
-//        System.out.println("Compare: "+ au.compareTo(fe));
-//        OmaLista<String> lista = new OmaLista<>();
-//
-//        String v1 = new String("A");
-//        String v2 = new String("A");
-//        String v3 = new String("A");
-//
-//        lista.add(v1);
-//        lista.add(v2);
-//        lista.add(v3);
-//        System.out.println("Lista: " + lista);
-//        System.out.println("Paluuarvo: " + lista.poista(v3));
-//        System.out.println("Lista. " + lista);
-        Hakemisto hakemisto = new Hakemisto(new StringBuilder("cats"), null);
+// Lisätään tiedostoja alihakemistoihin.
         Tiedosto tiedosto1 = new Tiedosto(new StringBuilder("grumpy_cat.jpeg"), 335932);
         Tiedosto tiedosto2 = new Tiedosto(new StringBuilder("cannot_be_unseen.jpeg"), 29614);
         Tiedosto tiedosto3 = new Tiedosto(new StringBuilder("ceiling_cat.gif"), 3677);
         Tiedosto tiedosto4 = new Tiedosto(new StringBuilder("dangerous_kitten.jpg"), 13432);
-        hakemisto.lisaa(tiedosto1);
-        hakemisto.lisaa(tiedosto2);
-        hakemisto.lisaa(tiedosto3);
-        hakemisto.lisaa(tiedosto4);
-        LinkedList<Tieto> osumat1 = hakemisto.hae("**"); // [ ]
-        LinkedList<Tieto> osumat2 = hakemisto.hae("*j*peg"); // [ ]
-        LinkedList<Tieto> osumat3 = hakemisto.hae("***"); // [ ]
-        LinkedList<Tieto> osumat4 = hakemisto.hae("i_really_really_really_like_this_picture.gif"); // [ ]
-        LinkedList<Tieto> osumat5 = hakemisto.hae("g**"); // [ ]
+        Tiedosto tiedosto5 = new Tiedosto(new StringBuilder("worlds_ugliest_dog.jpg"), 118088);
+        alihakemisto1.lisaa(tiedosto1);
+        alihakemisto1.lisaa(tiedosto2);
+        alihakemisto1.lisaa(tiedosto3);
+        alihakemisto1.lisaa(tiedosto4);
+        alihakemisto2.lisaa(tiedosto5);
 
-        System.out.println(osumat1);
-        System.out.println(osumat2);
-        System.out.println(osumat3);
-        System.out.println(osumat4);
-        System.out.println(osumat5);
+// Kuljetaan ylihakemiston ja sen alihakemistojen läpi iteraattorilla ja tallennetaan iteraattorin
+// palauttamat viitteet taulukkoon.
+        int lkm = ylihakemisto.sisalto().size() + alihakemisto1.sisalto().size() + alihakemisto2.sisalto().size();
+        Tieto[] viitteet = new Tieto[lkm];
+        Iterator<Tieto> iteraattori = ylihakemisto.iterator();
+        int ind = 0;
+        while (iteraattori.hasNext()) {
+            viitteet[ind++] = iteraattori.next();
+        }
+
 
     }
 }
