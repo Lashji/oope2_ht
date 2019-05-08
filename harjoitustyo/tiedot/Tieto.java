@@ -14,6 +14,10 @@ import java.io.Serializable;
 
 import java.util.Objects;
 
+/**
+ * Simuloi tietoa
+ * Voi olla joko hakemisto tai tiedosto
+ */
 public abstract class Tieto implements Comparable<Tieto>, Tietoinen, Serializable {
 
     private StringBuilder nimi;
@@ -47,6 +51,11 @@ public abstract class Tieto implements Comparable<Tieto>, Tietoinen, Serializabl
         return nimi.toString();
     }
 
+    /**
+     * Tarkistaa että nimi on sallitun lainen
+     * @param nimi
+     * @return onko nimi sallittu vai ei
+     */
     private boolean tarkistaNimenOikeellisuus(StringBuilder nimi) {
 
         if (nimi == null) {
@@ -58,6 +67,11 @@ public abstract class Tieto implements Comparable<Tieto>, Tietoinen, Serializabl
         return nimi.toString().matches(pattern);
     }
 
+    /**
+     * Equals metodi
+     * @param o
+     * @return
+     */
     @Override
     public boolean equals(Object o) {
 
@@ -73,6 +87,11 @@ public abstract class Tieto implements Comparable<Tieto>, Tietoinen, Serializabl
 
     }
 
+    /**
+     * Metodi vertaa Stringiä tiedoston nimeen ja hakusananaan ja palauttaa booleanin
+     * @param hakusana nimi tai ilmaus, johon tiedon nimeä verrataan.
+     * @return
+     */
     public boolean equals(String hakusana) {
         if (hakusana == null) {
             return false;
@@ -101,7 +120,11 @@ public abstract class Tieto implements Comparable<Tieto>, Tietoinen, Serializabl
 
     }
 
-    //
+    /**
+     * Hakee suunnan equals metodin vertailulle kun jokerimerkit on käytössä
+     * @param hakusana
+     * @return
+     */
     public int moodi(String hakusana) {
         int maara = jokerienMaara(hakusana);
 
@@ -125,6 +148,11 @@ public abstract class Tieto implements Comparable<Tieto>, Tietoinen, Serializabl
         return Objects.hash(nimi);
     }
 
+    /**
+     *  Stringin compareTo palautti -5 jostain syystä joten jotta testit menisivät läpi Integer.compare alapuolella.
+     * @param t
+     * @return
+     */
     @Override
     public int compareTo(Tieto t) {
         int i = this.nimi.toString().compareTo(t.nimi.toString());
@@ -132,6 +160,11 @@ public abstract class Tieto implements Comparable<Tieto>, Tietoinen, Serializabl
         return Integer.compare(i, 0);
     }
 
+    /**
+     * Hakee Stringissä esiintyvien jokerimerkkien määrän
+     * @param sana
+     * @return
+     */
     private int jokerienMaara(String sana) {
         int maara = 0;
         char[] ca = sana.toCharArray();
@@ -155,6 +188,10 @@ public abstract class Tieto implements Comparable<Tieto>, Tietoinen, Serializabl
         return maara;
     }
 
+    /**
+     * Syväkopioi tiedoston ja palauttaa sen
+     * @return Syväkopioitu Tieto
+     */
     public Tieto copy() {
         try {
 

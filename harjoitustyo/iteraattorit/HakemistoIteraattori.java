@@ -3,7 +3,10 @@ package harjoitustyo.iteraattorit;
 import harjoitustyo.omalista.OmaLista;
 import harjoitustyo.tiedot.Hakemisto;
 import harjoitustyo.tiedot.Tieto;
-
+/**
+ * Luokka iteroi Hakemiston lävitse
+ * Se sisältää Listan jonka se täyttää konstruktorissa
+ */
 import java.util.Iterator;
 
 // HakemistoIteraattori
@@ -20,6 +23,9 @@ public class HakemistoIteraattori<E> implements Iterator<E> {
         init();
     }
 
+    /**
+     * aloittaa listan täyttämisen
+     */
     private void init() {
         lisaa(h, tiedot);
     }
@@ -34,7 +40,12 @@ public class HakemistoIteraattori<E> implements Iterator<E> {
         return tiedot.get(index++);
     }
 
-
+    /**
+     * Täyttää listan rekursiivisesti
+     *
+     * @param h
+     * @param tiedot
+     */
     private void lisaa(Hakemisto h, OmaLista<E> tiedot) {
         Iterator<E> itr = (Iterator<E>) h.sisalto().iterator();
 

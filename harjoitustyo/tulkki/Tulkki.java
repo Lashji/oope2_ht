@@ -12,6 +12,10 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * Simuloi Terminal Emulaattoria
+ * Tulkki hallinnoi kaikkia toimintoja
+ */
 public class Tulkki {
 
     private static final String ERROR_MESSAGE = "Error!";
@@ -28,6 +32,13 @@ public class Tulkki {
         aloitusTeksti();
     }
 
+    /**
+     * Ottaa vastaan komennon käyttöliittymältä ja jakaa sen eteenpäin
+     * @param valinta
+     * @return
+     * @throws IllegalArgumentException
+     * @throws NumberFormatException
+     */
     public boolean komento(String valinta) throws IllegalArgumentException, NumberFormatException {
         String[] valintaPaloina = valinta.split(" ");
         int paramPituus = valintaPaloina.length;
@@ -144,6 +155,11 @@ public class Tulkki {
         return true;
     }
 
+    /**
+     * Tarkistaa esiintyykö nimi jo halutussa hakemistossa
+     * @param parametri
+     * @return
+     */
     private boolean tarkistaOnkoNimiOlemassa(String parametri) {
 
         if (parametri.contains("*"))
@@ -157,6 +173,11 @@ public class Tulkki {
         return false;
     }
 
+    /**
+     * Luo uuden kansion simulaatioon
+     * @param valinta
+     * @throws IllegalArgumentException
+     */
     private void teeUusiKansio(String valinta) throws IllegalArgumentException {
 
         StringBuilder sb = new StringBuilder();
@@ -167,6 +188,12 @@ public class Tulkki {
         }
     }
 
+    /**
+     * Luo uuden tiedoston simulaatioon.
+     * @param valinta
+     * @param koko
+     * @throws IllegalArgumentException
+     */
     private void teeUusiTiedosto(String valinta, int koko) throws IllegalArgumentException {
         if (valinta == null || valinta.length() == 0) {
             sijainti.lisaa(new Tiedosto());
@@ -177,6 +204,10 @@ public class Tulkki {
         }
     }
 
+    /**
+     * Vaihtaa kansiota
+     * @param valinta
+     */
     private void vaihdaKansiota(String valinta) {
 
         if (valinta == null || valinta.isEmpty()) {
@@ -209,7 +240,10 @@ public class Tulkki {
 
     }
 
-
+    /**
+     * Listaa kansion sisällön
+     * @param parametri
+     */
     private void listaaSisalto(String parametri) {
 
         if (parametri.isEmpty()) {
@@ -226,6 +260,11 @@ public class Tulkki {
 
     }
 
+    /**
+     * Poistaa sisältöä hakemistosta
+     * @param valinta
+     * @throws IllegalArgumentException
+     */
     private void poistaSisaltoa(String valinta) throws IllegalArgumentException {
         LinkedList<Tieto> tmp = sijainti.hae(valinta);
         if (tmp.isEmpty()) throw new IllegalArgumentException();
@@ -235,6 +274,12 @@ public class Tulkki {
         }
     }
 
+    /**
+     * Muuttaa Tiedon nimen
+     * @param vanhaNimi
+     * @param uusiNimi
+     * @throws IllegalArgumentException
+     */
     private void muutaNimi(String vanhaNimi, String uusiNimi) throws IllegalArgumentException {
         List<Tieto> vanhaTieto = sijainti.hae(vanhaNimi);
 
@@ -249,6 +294,9 @@ public class Tulkki {
         }
     }
 
+    /**
+     * Listaa hakemiston tiedot rekursiivisesti käyttäen hyväksi HakemistoIteraattoria
+     */
     private void find() {
         Iterator<Tieto> itr = sijainti.iterator();
 
@@ -257,6 +305,11 @@ public class Tulkki {
         }
     }
 
+    /**
+     * Syväkopioi Hakusanalla annetun tiedon joko toiseen kansioon tai toiselle nimelle.
+     * @param vanhaNimi
+     * @param uusiNimi
+     */
     private void kopioi(String vanhaNimi, String uusiNimi) {
 
         if (vanhaNimi.startsWith("*") && !uusiNimi.isEmpty()) {
@@ -301,6 +354,12 @@ public class Tulkki {
         }
     }
 
+    /**
+     * Hirveä viritys joka tuli tehtyä pikaisesti työtä palautellessa kello 2:00 yöllä
+     * Kopioi listan tai jotain sinnepäin. Haluan nukkumaan.
+     * @param vanhaNimi
+     * @param uusiNimi
+     */
     private void kopioiLista(String vanhaNimi, String uusiNimi) {
 
         LinkedList<Tieto> haut = sijainti.hae(vanhaNimi);
@@ -353,17 +412,27 @@ public class Tulkki {
     /*
      * Print functions
      */
+
+    /**
+     * Tulostaa aloitustekstin
+     */
     public void aloitusTeksti() {
         System.out.print("Welcome to SOS.\n");
         tulostaPolku();
     }
 
+    /**
+     * Ohjeteksti komennoille
+     */
     public void apuTeksti() {
         System.out.println("Commands you can do: " + "\nmd - creates new directory" + "\nmf - creates new file"
                 + "\ncd - changes directory" + "\nls - lists directory" + "\nrm - removes file" + "\nmv - moves file"
                 + "\ncp - copies file" + "\nfind - searchs for a file" + "\nexit - exit program");
     }
 
+    /**
+     * Tulostaa polun missä mennään
+     */
     public void tulostaPolku() {
         StringBuilder sb = new StringBuilder();
 
@@ -377,6 +446,9 @@ public class Tulkki {
         System.out.println(sb.toString());
     }
 
+    /**
+     * Tulostaa Errorin, mutta tätä unohdin vissiin käyttää.
+     */
     public void tulostaError() {
         System.out.println(ERROR_MESSAGE);
     }

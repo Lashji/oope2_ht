@@ -5,6 +5,11 @@ package harjoitustyo.ui;
 import harjoitustyo.apulaiset.In;
 import harjoitustyo.tulkki.Tulkki;
 
+/**
+ * Käyttöliittymä luokka
+ * Hallinnoi kaikkea käyttöliittymään liittyvää.
+ * Ottaa vastaan komennot ja välittää ne tulkille.
+ */
 public class Kayttoliittyma {
     private Tulkki tulkki;
 
@@ -12,6 +17,9 @@ public class Kayttoliittyma {
         this.tulkki = uusiTulkki;
     }
 
+    /**
+     * Main loop
+     */
     public void start() {
         boolean jatka = true;
 
