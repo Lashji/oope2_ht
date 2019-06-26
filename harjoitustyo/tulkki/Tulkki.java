@@ -34,133 +34,19 @@ public class Tulkki {
 
     /**
      * Ottaa vastaan komennon käyttöliittymältä ja jakaa sen eteenpäin
-     * @param valinta
-     * @return
-     * @throws IllegalArgumentException
-     * @throws NumberFormatException
+     * @param valinta Komento
+     * @return boolean
+     * @throws IllegalArgumentException error1
+     * @throws NumberFormatException error2
      */
-    public boolean komento(String valinta) throws IllegalArgumentException, NumberFormatException {
-        String[] valintaPaloina = valinta.split(" ");
-        int paramPituus = valintaPaloina.length;
 
-        if (valintaPaloina.length >= 1) {
-
-            String komento = valintaPaloina[0];
-            String parametri = "";
-            String parametri2 = "";
-
-            if (paramPituus >= 2) {
-                parametri = valintaPaloina[1];
-            }
-
-            if (paramPituus >= 3) {
-                parametri2 = valintaPaloina[2];
-            }
-
-            switch (komento) {
-
-                case "md":
-                    if (parametri != null && !parametri.isEmpty() &&
-                            !tarkistaOnkoNimiOlemassa(parametri) && paramPituus == 2)
-                        try {
-                            teeUusiKansio(parametri);
-                        } catch (IllegalArgumentException e) {
-                            System.out.println(ERROR_MESSAGE);
-                        }
-                    else
-                        System.out.println(ERROR_MESSAGE);
-                    break;
-                case "mf":
-                    if (parametri != null && !parametri.isEmpty() && paramPituus <= 3
-                            && !tarkistaOnkoNimiOlemassa(parametri)) {
-                        try {
-                            teeUusiTiedosto(parametri, parametri2.isEmpty() ? 0 : Integer.valueOf(parametri2));
-                        } catch (IllegalArgumentException e) {
-                            System.out.println(ERROR_MESSAGE);
-                        }
-                    } else {
-                        System.out.println(ERROR_MESSAGE);
-
-                    }
-                    break;
-                case "cd":
-                    if (parametri == null || paramPituus > 2) {
-                        System.out.println(ERROR_MESSAGE);
-                    } else {
-                        vaihdaKansiota(parametri);
-                    }
-                    break;
-                case "ls":
-//                   Jos haetaan parametrilla tarkistetaan että Tieto on olemassa
-                    if (!parametri.isEmpty())
-                        if (tarkistaOnkoNimiOlemassa(parametri) && paramPituus == 2)
-                            listaaSisalto(parametri);
-                        else
-                            System.out.println(ERROR_MESSAGE);
-                    else
-                        listaaSisalto(parametri);
-                    break;
-                case "rm":
-                    if (!parametri.isEmpty() && paramPituus == 2 && tarkistaOnkoNimiOlemassa(parametri))
-                        try {
-                            poistaSisaltoa(parametri);
-                        } catch (Exception e) {
-                            System.out.println(ERROR_MESSAGE);
-                        }
-                    else
-                        System.out.println(ERROR_MESSAGE);
-                    break;
-                case "mv":
-                    if (!parametri.isEmpty() && !parametri2.isEmpty()
-                            && paramPituus == 3
-                            && tarkistaOnkoNimiOlemassa(parametri)
-                            && !tarkistaOnkoNimiOlemassa(parametri2)) {
-                        try {
-
-                            muutaNimi(parametri, parametri2);
-                        } catch (IllegalArgumentException e) {
-                            System.out.println(ERROR_MESSAGE);
-                        }
-                    } else {
-                        System.out.println(ERROR_MESSAGE);
-                    }
-                    break;
-                case "cp":
-                    if (!parametri.isEmpty() && !parametri2.isEmpty()
-                            && paramPituus == 3
-                            && tarkistaOnkoNimiOlemassa(parametri)
-                    ) {
-                        kopioi(parametri, parametri2);
-                    } else {
-                        System.out.println(ERROR_MESSAGE);
-                    }
-                    break;
-                case "find":
-                    if (paramPituus == 1) {
-                        find();
-                    } else {
-                        System.out.println(ERROR_MESSAGE);
-                    }
-                    break;
-                case "exit":
-                    return false;
-                case "--help":
-                    apuTeksti();
-                    break;
-                default:
-                    System.out.println(ERROR_MESSAGE);
-            }
-        }
-
-        return true;
-    }
 
     /**
      * Tarkistaa esiintyykö nimi jo halutussa hakemistossa
-     * @param parametri
-     * @return
+     * @param parametri tarkistettava
+     * @return boolean
      */
-    private boolean tarkistaOnkoNimiOlemassa(String parametri) {
+    public boolean tarkistaOnkoNimiOlemassa(String parametri) {
 
         if (parametri.contains("*"))
             return true;
@@ -175,10 +61,10 @@ public class Tulkki {
 
     /**
      * Luo uuden kansion simulaatioon
-     * @param valinta
-     * @throws IllegalArgumentException
+     * @param valinta nimi
+     * @throws IllegalArgumentException error1
      */
-    private void teeUusiKansio(String valinta) throws IllegalArgumentException {
+    public void teeUusiKansio(String valinta) throws IllegalArgumentException {
 
         StringBuilder sb = new StringBuilder();
         sb.append(valinta);
@@ -190,11 +76,11 @@ public class Tulkki {
 
     /**
      * Luo uuden tiedoston simulaatioon.
-     * @param valinta
-     * @param koko
-     * @throws IllegalArgumentException
+     * @param valinta nimi
+     * @param koko koko
+     * @throws IllegalArgumentException exception
      */
-    private void teeUusiTiedosto(String valinta, int koko) throws IllegalArgumentException {
+    public void teeUusiTiedosto(String valinta, int koko) throws IllegalArgumentException {
         if (valinta == null || valinta.length() == 0) {
             sijainti.lisaa(new Tiedosto());
         } else {
@@ -206,9 +92,9 @@ public class Tulkki {
 
     /**
      * Vaihtaa kansiota
-     * @param valinta
+     * @param valinta nimi
      */
-    private void vaihdaKansiota(String valinta) {
+    public void vaihdaKansiota(String valinta) {
 
         if (valinta == null || valinta.isEmpty()) {
             sijainti(juuri);
@@ -242,9 +128,9 @@ public class Tulkki {
 
     /**
      * Listaa kansion sisällön
-     * @param parametri
+     * @param parametri nimi
      */
-    private void listaaSisalto(String parametri) {
+    public void listaaSisalto(String parametri) {
 
         if (parametri.isEmpty()) {
             this.sijainti.sisalto().forEach(System.out::println);
@@ -262,10 +148,10 @@ public class Tulkki {
 
     /**
      * Poistaa sisältöä hakemistosta
-     * @param valinta
-     * @throws IllegalArgumentException
+     * @param valinta nimi
+     * @throws IllegalArgumentException exception
      */
-    private void poistaSisaltoa(String valinta) throws IllegalArgumentException {
+    public void poistaSisaltoa(String valinta) throws IllegalArgumentException {
         LinkedList<Tieto> tmp = sijainti.hae(valinta);
         if (tmp.isEmpty()) throw new IllegalArgumentException();
 
@@ -276,11 +162,11 @@ public class Tulkki {
 
     /**
      * Muuttaa Tiedon nimen
-     * @param vanhaNimi
-     * @param uusiNimi
-     * @throws IllegalArgumentException
+     * @param vanhaNimi vanhaNimi
+     * @param uusiNimi uusiNimi
+     * @throws IllegalArgumentException exception
      */
-    private void muutaNimi(String vanhaNimi, String uusiNimi) throws IllegalArgumentException {
+    public void muutaNimi(String vanhaNimi, String uusiNimi) throws IllegalArgumentException {
         List<Tieto> vanhaTieto = sijainti.hae(vanhaNimi);
 
         if (!vanhaTieto.isEmpty()) {
@@ -297,7 +183,7 @@ public class Tulkki {
     /**
      * Listaa hakemiston tiedot rekursiivisesti käyttäen hyväksi HakemistoIteraattoria
      */
-    private void find() {
+    public void find() {
         Iterator<Tieto> itr = sijainti.iterator();
 
         while (itr.hasNext()) {
@@ -307,10 +193,10 @@ public class Tulkki {
 
     /**
      * Syväkopioi Hakusanalla annetun tiedon joko toiseen kansioon tai toiselle nimelle.
-     * @param vanhaNimi
-     * @param uusiNimi
+     * @param vanhaNimi vanha nimi
+     * @param uusiNimi uusi nimi
      */
-    private void kopioi(String vanhaNimi, String uusiNimi) {
+    public void kopioi(String vanhaNimi, String uusiNimi) {
 
         if (vanhaNimi.startsWith("*") && !uusiNimi.isEmpty()) {
             kopioiLista(vanhaNimi, uusiNimi);
@@ -357,8 +243,8 @@ public class Tulkki {
     /**
      * Hirveä viritys joka tuli tehtyä pikaisesti työtä palautellessa kello 2:00 yöllä
      * Kopioi listan tai jotain sinnepäin. Haluan nukkumaan.
-     * @param vanhaNimi
-     * @param uusiNimi
+     * @param vanhaNimi vanha nimi
+     * @param uusiNimi uusi nimi
      */
     private void kopioiLista(String vanhaNimi, String uusiNimi) {
 

@@ -53,7 +53,7 @@ public abstract class Tieto implements Comparable<Tieto>, Tietoinen, Serializabl
 
     /**
      * Tarkistaa että nimi on sallitun lainen
-     * @param nimi
+     * @param nimi nimi
      * @return onko nimi sallittu vai ei
      */
     private boolean tarkistaNimenOikeellisuus(StringBuilder nimi) {
@@ -69,8 +69,8 @@ public abstract class Tieto implements Comparable<Tieto>, Tietoinen, Serializabl
 
     /**
      * Equals metodi
-     * @param o
-     * @return
+     * @param o object
+     * @return boolean
      */
     @Override
     public boolean equals(Object o) {
@@ -90,7 +90,7 @@ public abstract class Tieto implements Comparable<Tieto>, Tietoinen, Serializabl
     /**
      * Metodi vertaa Stringiä tiedoston nimeen ja hakusananaan ja palauttaa booleanin
      * @param hakusana nimi tai ilmaus, johon tiedon nimeä verrataan.
-     * @return
+     * @return boolean
      */
     public boolean equals(String hakusana) {
         if (hakusana == null) {
@@ -122,8 +122,8 @@ public abstract class Tieto implements Comparable<Tieto>, Tietoinen, Serializabl
 
     /**
      * Hakee suunnan equals metodin vertailulle kun jokerimerkit on käytössä
-     * @param hakusana
-     * @return
+     * @param hakusana hakusana
+     * @return int
      */
     public int moodi(String hakusana) {
         int maara = jokerienMaara(hakusana);
@@ -150,8 +150,8 @@ public abstract class Tieto implements Comparable<Tieto>, Tietoinen, Serializabl
 
     /**
      *  Stringin compareTo palautti -5 jostain syystä joten jotta testit menisivät läpi Integer.compare alapuolella.
-     * @param t
-     * @return
+     * @param t tieto
+     * @return int
      */
     @Override
     public int compareTo(Tieto t) {
@@ -162,8 +162,8 @@ public abstract class Tieto implements Comparable<Tieto>, Tietoinen, Serializabl
 
     /**
      * Hakee Stringissä esiintyvien jokerimerkkien määrän
-     * @param sana
-     * @return
+     * @param sana sana
+     * @return int
      */
     private int jokerienMaara(String sana) {
         int maara = 0;

@@ -10,7 +10,7 @@ import java.util.ListIterator;
  * OmaLista on LinkedLististä periytyvä oma tietorakenne jolla on
  * lisaa, poista ja järjestä metodit.
  * lista järjestetään aina kun sinne lisätään asioita
- * @param <E>
+ * @param <E> E
  */
 public class OmaLista<E> extends LinkedList<E> implements Ooperoiva<E> {
 
@@ -22,7 +22,7 @@ public class OmaLista<E> extends LinkedList<E> implements Ooperoiva<E> {
      *
      * @param uusi viite olioon, jonka luokan tai luokan esivanhemman oletetaan
      * toteuttaneen Comparable-rajapinnan.
-     * @return
+     * @return boolean
      */
     @Override
     public boolean lisaa(E uusi) {
@@ -41,7 +41,7 @@ public class OmaLista<E> extends LinkedList<E> implements Ooperoiva<E> {
     /**
      *
      * @param poistettava viite tietoalkioon.
-     * @return
+     * @return int
      */
     @Override
     public int poista(E poistettava) {

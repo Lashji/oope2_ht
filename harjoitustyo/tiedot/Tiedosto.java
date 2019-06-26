@@ -24,8 +24,8 @@ public class Tiedosto extends Tieto implements Syvakopioituva<Tieto> {
 
     /**
      *
-     * @param uusiKoko
-     * @throws IllegalArgumentException
+     * @param uusiKoko uusi koko
+     * @throws IllegalArgumentException exception
      */
     public void koko(int uusiKoko) throws IllegalArgumentException {
         if (uusiKoko >= 0) {
@@ -37,7 +37,7 @@ public class Tiedosto extends Tieto implements Syvakopioituva<Tieto> {
 
     /**
      *
-     * @return
+     * @return koko
      */
     public int koko() {
         return koko;
@@ -45,8 +45,8 @@ public class Tiedosto extends Tieto implements Syvakopioituva<Tieto> {
 
     /**
      *
-     * @param toinen
-     * @return
+     * @param toinen object
+     * @return boolean
      */
     @Override
     public boolean equals(Object toinen){
@@ -55,7 +55,7 @@ public class Tiedosto extends Tieto implements Syvakopioituva<Tieto> {
 
     /**
      *
-     * @return
+     * @return toString
      */
     @Override
     public String toString() {

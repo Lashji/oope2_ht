@@ -56,7 +56,7 @@ public class Hakemisto extends Tieto implements Sailova<Tieto>, Iterable<Tieto> 
      *
      * @param hakusana nimi tai ilmaus, johon hakemiston tiedostojen ja alihakemistojen
      *                 nimi� verrataan.
-     * @return
+     * @return LinkedList
      */
     @Override
     public LinkedList<Tieto> hae(String hakusana) {
@@ -73,7 +73,7 @@ public class Hakemisto extends Tieto implements Sailova<Tieto>, Iterable<Tieto> 
      * Lisää Tieto tyyppisen muutujanOmaListaan
      *
      * @param lisattava viite lis�tt�v��n tietoon.
-     * @return
+     * @return boolean
      */
     @Override
     public boolean lisaa(Tieto lisattava) {
@@ -83,7 +83,7 @@ public class Hakemisto extends Tieto implements Sailova<Tieto>, Iterable<Tieto> 
     /**
      * Poistaa muuttujan listasta
      * @param poistettava viite poistettavaan tietoon.
-     * @return
+     * @return boolean
      */
     @Override
     public boolean poista(Tieto poistettava) {
@@ -109,8 +109,8 @@ public class Hakemisto extends Tieto implements Sailova<Tieto>, Iterable<Tieto> 
 
     /**
      * Vertaa eka Tieto luokan equalssia ja jos se palautuu falsena vertaa vielä nimeä
-     * @param hakusana
-     * @return
+     * @param hakusana hakusana
+     * @return boolean
      */
     @Override
     public boolean equals(String hakusana) {

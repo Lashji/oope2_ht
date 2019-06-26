@@ -21,7 +21,8 @@ import java.util.LinkedList;
 public class Oope2HT {
     /**
      * Main
-     * @param args
+     *
+     * @param args args
      */
     public static void main(String[] args) {
 
