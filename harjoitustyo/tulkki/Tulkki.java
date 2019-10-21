@@ -12,6 +12,10 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * Simuloi Terminal Emulaattoria
+ * Tulkki hallinnoi kaikkia toimintoja
+ */
 public class Tulkki {
 
     private static final String ERROR_MESSAGE = "Error!";
@@ -28,123 +32,21 @@ public class Tulkki {
         aloitusTeksti();
     }
 
-    public boolean komento(String valinta) throws IllegalArgumentException, NumberFormatException {
-        String[] valintaPaloina = valinta.split(" ");
-        int paramPituus = valintaPaloina.length;
+    /**
+     * Ottaa vastaan komennon käyttöliittymältä ja jakaa sen eteenpäin
+     * @param valinta Komento
+     * @return boolean
+     * @throws IllegalArgumentException error1
+     * @throws NumberFormatException error2
+     */
 
-        if (valintaPaloina.length >= 1) {
 
-            String komento = valintaPaloina[0];
-            String parametri = "";
-            String parametri2 = "";
-
-            if (paramPituus >= 2) {
-                parametri = valintaPaloina[1];
-            }
-
-            if (paramPituus >= 3) {
-                parametri2 = valintaPaloina[2];
-            }
-
-            switch (komento) {
-
-                case "md":
-                    if (parametri != null && !parametri.isEmpty() &&
-                            !tarkistaOnkoNimiOlemassa(parametri) && paramPituus == 2)
-                        try {
-                            teeUusiKansio(parametri);
-                        } catch (IllegalArgumentException e) {
-                            System.out.println(ERROR_MESSAGE);
-                        }
-                    else
-                        System.out.println(ERROR_MESSAGE);
-                    break;
-                case "mf":
-                    if (parametri != null && !parametri.isEmpty() && paramPituus <= 3
-                            && !tarkistaOnkoNimiOlemassa(parametri)) {
-                        try {
-                            teeUusiTiedosto(parametri, parametri2.isEmpty() ? 0 : Integer.valueOf(parametri2));
-                        } catch (IllegalArgumentException e) {
-                            System.out.println(ERROR_MESSAGE);
-                        }
-                    } else {
-                        System.out.println(ERROR_MESSAGE);
-
-                    }
-                    break;
-                case "cd":
-                    if (parametri == null || paramPituus > 2) {
-                        System.out.println(ERROR_MESSAGE);
-                    } else {
-                        vaihdaKansiota(parametri);
-                    }
-                    break;
-                case "ls":
-//                   Jos haetaan parametrilla tarkistetaan että Tieto on olemassa
-                    if (!parametri.isEmpty())
-                        if (tarkistaOnkoNimiOlemassa(parametri) && paramPituus == 2)
-                            listaaSisalto(parametri);
-                        else
-                            System.out.println(ERROR_MESSAGE);
-                    else
-                        listaaSisalto(parametri);
-                    break;
-                case "rm":
-                    if (!parametri.isEmpty() && paramPituus == 2 && tarkistaOnkoNimiOlemassa(parametri))
-                        try {
-                            poistaSisaltoa(parametri);
-                        } catch (Exception e) {
-                            System.out.println(ERROR_MESSAGE);
-                        }
-                    else
-                        System.out.println(ERROR_MESSAGE);
-                    break;
-                case "mv":
-                    if (!parametri.isEmpty() && !parametri2.isEmpty()
-                            && paramPituus == 3
-                            && tarkistaOnkoNimiOlemassa(parametri)
-                            && !tarkistaOnkoNimiOlemassa(parametri2)) {
-                        try {
-
-                            muutaNimi(parametri, parametri2);
-                        } catch (IllegalArgumentException e) {
-                            System.out.println(ERROR_MESSAGE);
-                        }
-                    } else {
-                        System.out.println(ERROR_MESSAGE);
-                    }
-                    break;
-                case "cp":
-                    if (!parametri.isEmpty() && !parametri2.isEmpty()
-                            && paramPituus == 3
-                            && tarkistaOnkoNimiOlemassa(parametri)
-                    ) {
-                        kopioi(parametri, parametri2);
-                    } else {
-                        System.out.println(ERROR_MESSAGE);
-                    }
-                    break;
-                case "find":
-                    if (paramPituus == 1) {
-                        find();
-                    } else {
-                        System.out.println(ERROR_MESSAGE);
-                    }
-                    break;
-                case "exit":
-                    return false;
-                case "--help":
-                    apuTeksti();
-                    break;
-                default:
-                    System.out.println(ERROR_MESSAGE);
-            }
-        }
-
-        return true;
-    }
-
-    private boolean tarkistaOnkoNimiOlemassa(String parametri) {
+    /**
+     * Tarkistaa esiintyykö nimi jo halutussa hakemistossa
+     * @param parametri tarkistettava
+     * @return boolean
+     */
+    public boolean tarkistaOnkoNimiOlemassa(String parametri) {
 
         if (parametri.contains("*"))
             return true;
@@ -157,7 +59,12 @@ public class Tulkki {
         return false;
     }
 
-    private void teeUusiKansio(String valinta) throws IllegalArgumentException {
+    /**
+     * Luo uuden kansion simulaatioon
+     * @param valinta nimi
+     * @throws IllegalArgumentException error1
+     */
+    public void teeUusiKansio(String valinta) throws IllegalArgumentException {
 
         StringBuilder sb = new StringBuilder();
         sb.append(valinta);
@@ -167,7 +74,13 @@ public class Tulkki {
         }
     }
 
-    private void teeUusiTiedosto(String valinta, int koko) throws IllegalArgumentException {
+    /**
+     * Luo uuden tiedoston simulaatioon.
+     * @param valinta nimi
+     * @param koko koko
+     * @throws IllegalArgumentException exception
+     */
+    public void teeUusiTiedosto(String valinta, int koko) throws IllegalArgumentException {
         if (valinta == null || valinta.length() == 0) {
             sijainti.lisaa(new Tiedosto());
         } else {
@@ -177,7 +90,11 @@ public class Tulkki {
         }
     }
 
-    private void vaihdaKansiota(String valinta) {
+    /**
+     * Vaihtaa kansiota
+     * @param valinta nimi
+     */
+    public void vaihdaKansiota(String valinta) {
 
         if (valinta == null || valinta.isEmpty()) {
             sijainti(juuri);
@@ -209,8 +126,11 @@ public class Tulkki {
 
     }
 
-
-    private void listaaSisalto(String parametri) {
+    /**
+     * Listaa kansion sisällön
+     * @param parametri nimi
+     */
+    public void listaaSisalto(String parametri) {
 
         if (parametri.isEmpty()) {
             this.sijainti.sisalto().forEach(System.out::println);
@@ -226,7 +146,12 @@ public class Tulkki {
 
     }
 
-    private void poistaSisaltoa(String valinta) throws IllegalArgumentException {
+    /**
+     * Poistaa sisältöä hakemistosta
+     * @param valinta nimi
+     * @throws IllegalArgumentException exception
+     */
+    public void poistaSisaltoa(String valinta) throws IllegalArgumentException {
         LinkedList<Tieto> tmp = sijainti.hae(valinta);
         if (tmp.isEmpty()) throw new IllegalArgumentException();
 
@@ -235,7 +160,13 @@ public class Tulkki {
         }
     }
 
-    private void muutaNimi(String vanhaNimi, String uusiNimi) throws IllegalArgumentException {
+    /**
+     * Muuttaa Tiedon nimen
+     * @param vanhaNimi vanhaNimi
+     * @param uusiNimi uusiNimi
+     * @throws IllegalArgumentException exception
+     */
+    public void muutaNimi(String vanhaNimi, String uusiNimi) throws IllegalArgumentException {
         List<Tieto> vanhaTieto = sijainti.hae(vanhaNimi);
 
         if (!vanhaTieto.isEmpty()) {
@@ -249,7 +180,10 @@ public class Tulkki {
         }
     }
 
-    private void find() {
+    /**
+     * Listaa hakemiston tiedot rekursiivisesti käyttäen hyväksi HakemistoIteraattoria
+     */
+    public void find() {
         Iterator<Tieto> itr = sijainti.iterator();
 
         while (itr.hasNext()) {
@@ -257,7 +191,12 @@ public class Tulkki {
         }
     }
 
-    private void kopioi(String vanhaNimi, String uusiNimi) {
+    /**
+     * Syväkopioi Hakusanalla annetun tiedon joko toiseen kansioon tai toiselle nimelle.
+     * @param vanhaNimi vanha nimi
+     * @param uusiNimi uusi nimi
+     */
+    public void kopioi(String vanhaNimi, String uusiNimi) {
 
         if (vanhaNimi.startsWith("*") && !uusiNimi.isEmpty()) {
             kopioiLista(vanhaNimi, uusiNimi);
@@ -301,6 +240,12 @@ public class Tulkki {
         }
     }
 
+    /**
+     * Hirveä viritys joka tuli tehtyä pikaisesti työtä palautellessa kello 2:00 yöllä
+     * Kopioi listan tai jotain sinnepäin. Haluan nukkumaan.
+     * @param vanhaNimi vanha nimi
+     * @param uusiNimi uusi nimi
+     */
     private void kopioiLista(String vanhaNimi, String uusiNimi) {
 
         LinkedList<Tieto> haut = sijainti.hae(vanhaNimi);
@@ -353,17 +298,27 @@ public class Tulkki {
     /*
      * Print functions
      */
+
+    /**
+     * Tulostaa aloitustekstin
+     */
     public void aloitusTeksti() {
         System.out.print("Welcome to SOS.\n");
         tulostaPolku();
     }
 
+    /**
+     * Ohjeteksti komennoille
+     */
     public void apuTeksti() {
         System.out.println("Commands you can do: " + "\nmd - creates new directory" + "\nmf - creates new file"
                 + "\ncd - changes directory" + "\nls - lists directory" + "\nrm - removes file" + "\nmv - moves file"
                 + "\ncp - copies file" + "\nfind - searchs for a file" + "\nexit - exit program");
     }
 
+    /**
+     * Tulostaa polun missä mennään
+     */
     public void tulostaPolku() {
         StringBuilder sb = new StringBuilder();
 
@@ -377,6 +332,9 @@ public class Tulkki {
         System.out.println(sb.toString());
     }
 
+    /**
+     * Tulostaa Errorin, mutta tätä unohdin vissiin käyttää.
+     */
     public void tulostaError() {
         System.out.println(ERROR_MESSAGE);
     }

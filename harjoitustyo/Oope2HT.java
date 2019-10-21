@@ -13,7 +13,17 @@ import harjoitustyo.apulaiset.In;
 import java.util.Iterator;
 import java.util.LinkedList;
 
+/**
+ * Main tiedosto
+ * Luodaan tulkki ja käynnistetään käyttöliittymä
+ * Sisältää myös testin
+ */
 public class Oope2HT {
+    /**
+     * Main
+     *
+     * @param args args
+     */
     public static void main(String[] args) {
 
         Tulkki tulkki = new Tulkki();
@@ -23,6 +33,9 @@ public class Oope2HT {
 //        Testi();
     }
 
+    /**
+     * TESTI
+     */
     public static void Testi() {
         // Luodaan hakemistot. Alihakemistoista asetetaan viitteet ylihakemistoon
 // ja alihakemistot lisätään ylihakemistoon.
